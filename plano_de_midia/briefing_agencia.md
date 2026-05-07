@@ -27,7 +27,7 @@ A agência contratada atuará em **duas frentes complementares**:
 
 Medir e analisar a performance de **toda chamada publicada** em qualquer das 20 mídias mapeadas — não apenas as chamadas de transmissão do YouTube. O conceito de chamada cobre qualquer post, story, reel, tweet ou mensagem que contenha um CTA rastreável para a loja.
 
-Para cada chamada, o funil analisado vai de Exposição → CTR → Sessões na loja ML → Conversão. O framework completo está em **`framework_analise_por_chamada.md`**.
+Para cada chamada, o funil analisado vai de Exposição → CTR → Sessões na loja ML ou iFood → Conversão.
 
 **Entregáveis desta frente:**
 - Análise de performance das chamadas de cada jogo da Copa (thumbnail + título + CTR + acessos ML)
@@ -79,14 +79,7 @@ Os dois produtos compartilham os mesmos canais orgânicos e pagos, mas têm funn
 
 ### Diferença crítica de timing: o deadline do bolão
 
-Para a camiseteria, a janela de conversão é aberta — o usuário pode comprar a qualquer momento. Para o bolão, cada jogo tem um **deadline hard**: o palpite fecha no apito inicial. Isso exige análise e ação nas **3 horas que antecedem cada jogo**, especialmente nos canais intraday (Stories, Twitter, WhatsApp, TikTok):
-
-| Janela | Ação esperada da agência |
-|---|---|
-| H-3h antes do jogo | Confirmar se chamadas pré-jogo foram publicadas; monitorar CTR inicial |
-| H-1h antes do jogo | Alerta se CTR ou sessões iFood estiverem abaixo do esperado; recomendar chamada de reforço |
-| Apito inicial | Consolidar sessões iFood e palpites rastreados pela chamada |
-| D+1 | Relatório pós-jogo com funil completo + comparativo vs. jogo anterior |
+Para a camiseteria, a janela de conversão é aberta — o usuário pode comprar a qualquer momento. Para o bolão, o palpite fecha no apito inicial de cada jogo. As chamadas pré-jogo publicadas nos canais (stories, tweets, mensagens WhatsApp) são tratadas como **real-time**: a agência monitora CTR e sessões iFood assim que a chamada vai ao ar, da mesma forma que monitora uma live. Ao apito, consolida o funil. No D+1, entrega o relatório pós-jogo com comparativo vs. jogo anterior.
 
 ---
 
@@ -136,9 +129,7 @@ O mapa completo com indicadores, granularidade e periodicidade está detalhado n
 
 | Frequência | Conteúdo | Produtos cobertos |
 |---|---|---|
-| **H-3h antes de cada jogo** | Alerta pré-jogo — chamadas publicadas? CTR inicial acima do esperado? Sessões iFood em andamento? | Bolão |
-| **H-1h antes de cada jogo** | Alerta de urgência — se CTR ou sessões baixos, recomendar chamada de reforço ainda possível | Bolão |
-| **Real-time** (durante transmissões) | Dashboard ao vivo — CTR da chamada, pico de espectadores, sessões ML e iFood em tempo real | Camiseteria + Bolão |
+| **Real-time** (transmissões + chamadas pré-jogo) | CTR da chamada; pico de espectadores; sessões ML e iFood — chamadas publicadas antes do apito monitoradas com a mesma lógica | Camiseteria + Bolão |
 | **Pós-jogo (D+1)** | Relatório por jogo — funil completo (chamada → conversão) para camiseteria e bolão; ranking de chamadas do jogo | Camiseteria + Bolão |
 | **Diário** | Resumo de mídia paga — budget, CPM, CTR, CPA/cadastro — separado por produto | Camiseteria + Bolão |
 | **Semanal** | Relatório analítico — todos os 20 canais, ranking de chamadas, funis de conversão, retenção do bolão, insights e recomendações | Camiseteria + Bolão |
@@ -167,7 +158,7 @@ Além dos dados brutos, os relatórios devem conter:
 Para que a agência elabore um orçamento preciso, pedimos que o escopo responda:
 
 1. **Setup de rastreabilidade (ambos os produtos):** A agência cobre apenas análise e relatórios, ou também configura a estrutura de rastreabilidade? (taxonomia de UTMs para camiseteria + bolão, QR codes por jogo, eventos no GA4, integração com ML Analytics e iFood Analytics — esse setup é pré-requisito para fechar os funneis por chamada).
-2. **Monitoramento pré-jogo (bolão):** A agência se compromete com alertas em H-3h e H-1h antes de cada jogo durante a Copa? Qual a estrutura de plantão para os 104 jogos?
+2. **Monitoramento real-time (bolão):** A agência monitora em real-time as chamadas pré-jogo e as transmissões durante os 104 jogos da Copa? Qual a estrutura de plantão?
 3. **Frente paga:** A agência executa as campanhas (compra de mídia) ou apenas analisa campanhas já ativas gerenciadas pelo time interno? Aplicável para camiseteria e bolão separadamente.
 4. **Criação de criativos pagos:** Está no escopo criar as peças de mídia paga, ou a agência recebe criativos prontos do time de conteúdo? (para camiseteria e bolão)
 5. **Real-time nos dias de jogo:** Qual a estrutura de monitoramento ao vivo durante as transmissões? Há analista dedicado para YouTube Live + TikTok Live?
