@@ -1,6 +1,6 @@
 # Escopo de Análise — Tabela Resumo | CazéTV Copa 2026
 
-> Visão consolidada para bater o olho. Todos os 20 canais × ambos os produtos. Indicadores completos por canal estão no `mapa_de_midia.md`. Funneis de conversão em `framework_analise_por_chamada.md` (camiseteria) e `framework_bolao.md` (bolão).
+> Visão consolidada para bater o olho. Todos os 20 canais × ambos os produtos. Detalhamento por canal em `mapa_de_midia.md`. Escopo e cadência em `briefing_agencia.md`.
 
 ---
 

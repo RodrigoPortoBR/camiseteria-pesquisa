@@ -75,9 +75,7 @@ Os dois produtos compartilham os mesmos canais orgânicos e pagos, mas têm funn
 | **Conversão recorrente** | — | Palpite feito em cada jogo seguinte (retenção) |
 | **Virality** | — | Liga privada criada + amigos convidados |
 
-**Documentos de referência:**
-- Funil camiseteria: **`framework_analise_por_chamada.md`**
-- Funil bolão: **`framework_bolao.md`**
+**Documentos de referência:** `mapa_de_midia.md` · `tabela_escopo_agencia.md`
 
 ### Diferença crítica de timing: o deadline do bolão
 
@@ -148,46 +146,7 @@ O mapa completo com indicadores, granularidade e periodicidade está detalhado n
 
 ---
 
-## 7. Ferramentas Esperadas da Agência
-
-A agência deve ter acesso e domínio nas seguintes ferramentas (ou equivalentes de mercado):
-
-| Ferramenta | Produto | Uso |
-|---|---|---|
-| **YouTube Studio / YouTube Analytics** | Ambos | Análise orgânica de vídeos, lives, Shorts, playlists |
-| **Meta Ads Manager** | Ambos | Gestão e análise de mídia paga (Instagram + Facebook) |
-| **Instagram Insights** | Ambos | Análise orgânica IG (posts, reels, stories, comunidade) |
-| **TikTok Analytics + TikTok Ads Manager** | Ambos | Análise orgânica e paga TikTok |
-| **X Analytics + X Ads** | Ambos | Análise orgânica e paga Twitter/X |
-| **WhatsApp Business / Meta Business Suite** | Ambos | Métricas da Comunidade WhatsApp |
-| **Threads Insights (via Meta)** | Ambos | Análise orgânica Threads |
-| **BrandWatch** (ou equivalente) | Ambos | Monitoramento de menções — IG Comunidade Casimiro, BW geral |
-| **Google Analytics 4 (GA4)** | Ambos | Rastreio de conversão UTMs → ML (camiseteria) e → iFood (bolão); real-time nos dias de jogo |
-| **Mercado Livre Analytics** | Camiseteria | Sessões, produto, add to cart, pedidos na loja CazéTV |
-| **iFood Analytics / Plataforma do Bolão** | Bolão | Sessões na página do bolão, cadastros, palpites, retenção, ligas privadas |
-| **Gerador e rastreador de QR codes** (ex.: Bitly, QR.io) | Ambos | QR codes com UTMs para transmissões ao vivo — camiseteria e bolão separados por UTM |
-| **Looker Studio ou equivalente** | Ambos | Dashboards por produto — funil de conversão por canal e por chamada |
-
----
-
-## 8. Acessos que a CazéTV Fornecerá
-
-| Plataforma | Nível de acesso | Produto |
-|---|---|---|
-| YouTube Studio | Visualização (sem permissão de edição) | Ambos |
-| Meta Business Suite | Analista (Instagram + Threads + WhatsApp) | Ambos |
-| Meta Ads Manager | Analista (sem acesso a métodos de pagamento) | Ambos |
-| TikTok Analytics | Business Account — acesso de analista | Ambos |
-| TikTok Ads Manager | Analista | Ambos |
-| X Analytics | Acesso à conta | Ambos |
-| BrandWatch | Acesso ao painel com keywords pré-configuradas | Ambos |
-| GA4 | Acesso de leitura + permissão para criar relatórios e eventos personalizados | Ambos |
-| Mercado Livre (loja CazéTV) | Acesso ao painel de analytics da loja — sessões, produto, pedidos | Camiseteria |
-| iFood Analytics / Plataforma do Bolão | Acesso de leitura — sessões, cadastros, palpites, retenção, ligas | Bolão |
-
----
-
-## 9. O Que Esperamos da Agência nos Relatórios
+## 7. O Que Esperamos da Agência nos Relatórios
 
 Além dos dados brutos, os relatórios devem conter:
 
@@ -203,7 +162,7 @@ Além dos dados brutos, os relatórios devem conter:
 
 ---
 
-## 10. Perguntas para Embasar o Orçamento
+## 8. Perguntas para Embasar o Orçamento
 
 Para que a agência elabore um orçamento preciso, pedimos que o escopo responda:
 
@@ -220,7 +179,7 @@ Para que a agência elabore um orçamento preciso, pedimos que o escopo responda
 
 ---
 
-## 11. Janela Operacional
+## 9. Janela Operacional
 
 | Fase | Período | Camiseteria | Bolão |
 |---|---|---|---|
