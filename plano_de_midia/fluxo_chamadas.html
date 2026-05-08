@@ -7,27 +7,24 @@
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #F1F5F9; color: #1E293B; padding: 28px 24px; font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #F1F5F9; color: #1E293B;
+  padding: 28px 24px; font-size: 13px;
 }
 
-/* ── Page header ─────────────────────── */
+/* ── Header ─────────────────────────── */
 .page-header { margin-bottom: 28px; }
-.page-header h1 { font-size: 20px; font-weight: 700; color: #0F172A; margin-bottom: 6px; }
-.page-header p  { font-size: 13px; color: #64748B; line-height: 1.5; max-width: 780px; }
+h1 { font-size: 20px; font-weight: 700; color: #0F172A; margin-bottom: 6px; }
+.subtitle { font-size: 13px; color: #64748B; line-height: 1.5; max-width: 760px; }
+
+/* ── Legend ──────────────────────────── */
 .legend {
   display: flex; flex-wrap: wrap; align-items: center;
-  gap: 8px 18px; margin-top: 14px; padding: 10px 16px;
+  gap: 8px 20px; margin-top: 14px; padding: 10px 16px;
   background: white; border-radius: 8px; border: 1px solid #E2E8F0;
   font-size: 12px; color: #475569;
 }
-.leg-item { display: flex; align-items: center; gap: 5px; }
-.leg-bar  { width: 3px; height: 15px; border-radius: 2px; }
-.leg-sep  { color: #CBD5E1; }
-
-/* ── Badges ──────────────────────────── */
-.badges { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 4px; }
-.badge  { padding: 1px 5px; border-radius: 3px; font-size: 9px; font-weight: 700; }
+.badge { padding: 1px 5px; border-radius: 3px; font-size: 9px; font-weight: 700; }
 .b-cam { background:#DBEAFE; color:#1D4ED8; }
 .b-bol { background:#FEF3C7; color:#B45309; }
 .b-rt  { background:#DCFCE7; color:#15803D; }
@@ -37,116 +34,134 @@ body {
 .b-sem { background:#F1F5F9; color:#475569; }
 .b-enc { background:#F1F5F9; color:#475569; }
 
-/* ── Platform section ────────────────── */
-.platform { margin-bottom: 30px; }
+/* ── Platform ────────────────────────── */
+.platform { margin-bottom: 28px; }
 .platform-header {
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 6px 14px; border-radius: 6px; margin-bottom: 10px;
+  padding: 5px 13px; border-radius: 6px; margin-bottom: 10px;
   font-weight: 700; font-size: 13px; color: white;
 }
 
 /* ── Channel block ───────────────────── */
 .channel-block {
-  background: white; border-radius: 10px; border: 1px solid #E2E8F0;
-  margin-bottom: 10px; overflow: hidden;
+  background: white; border-radius: 10px;
+  border: 1px solid #E2E8F0; margin-bottom: 8px; overflow: hidden;
 }
 .channel-head {
-  display: flex; align-items: center; gap: 10px;
-  padding: 8px 14px; border-bottom: 1px solid #E2E8F0;
-  background: var(--pb); border-left: 4px solid var(--pc);
-}
-.channel-title { font-weight: 700; font-size: 14px; color: var(--pc); }
-
-/* ── Top flow ────────────────────────── */
-.channel-top {
-  display: flex; align-items: stretch;
-  padding: 12px 14px 0; gap: 0; flex-wrap: wrap;
-}
-.top-node {
-  flex: 1; min-width: 200px; background: #F8FAFC;
-  border: 1px solid #E2E8F0; border-radius: 7px; padding: 8px 11px;
-}
-.top-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 3px; }
-.top-text  { font-size: 12px; line-height: 1.45; color: #334155; }
-.n-mec  { border-left: 3px solid #3B82F6; }
-.n-mec .top-label  { color: #2563EB; }
-.n-cham { border-left: 3px solid #F59E0B; }
-.n-cham .top-label { color: #D97706; }
-.top-arrow {
-  display: flex; align-items: center; padding: 0 8px;
-  color: #CBD5E1; font-size: 18px; flex-shrink: 0;
-}
-
-/* ── Bifurcation ─────────────────────── */
-.bifurcation {
   display: flex; align-items: center; gap: 8px;
-  padding: 8px 14px; color: #94A3B8; font-size: 10px; font-weight: 600;
-  text-transform: uppercase; letter-spacing: .4px;
+  padding: 7px 14px; background: var(--pb); border-left: 4px solid var(--pc);
+  border-bottom: 1px solid #E2E8F0;
 }
-.bif-line  { flex: 1; height: 1px; background: #E2E8F0; }
-.bif-label { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 2px 10px; white-space: nowrap; }
+.ch-title { font-weight: 700; font-size: 14px; color: var(--pc); }
+.badges   { display: flex; gap: 3px; }
 
-/* ── Two-path grid ───────────────────── */
-.channel-paths { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 0 14px 12px; }
-
-/* ── Tracked path ────────────────────── */
-.path-tracked { background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 8px; padding: 10px 12px; }
-.path-tracked .path-title { font-size: 10px; font-weight: 700; color: #15803D; text-transform: uppercase; letter-spacing: .4px; margin-bottom: 8px; }
-.p-section-label { font-size: 9px; font-weight: 600; color: #64748B; text-transform: uppercase; letter-spacing: .3px; margin-bottom: 3px; }
-.p-acao   { font-size: 12px; line-height: 1.45; color: #1A3A2A; margin-bottom: 8px; }
-.dest-chip {
-  display: inline-block; background: #ECFDF5; color: #065F46;
-  border: 1px solid #A7F3D0; border-radius: 4px; padding: 2px 7px;
-  font-size: 11px; margin: 0 3px 3px 0;
+/* ── Funnel view ─────────────────────── */
+.funnel-view {
+  display: flex; align-items: flex-start;
+  padding: 14px 14px 14px 14px; gap: 0; overflow-x: auto;
 }
 
-/* ── Ambient path ────────────────────── */
-.path-ambient { background: #FFFBEB; border: 1px dashed #FCD34D; border-radius: 8px; padding: 10px 12px; }
-.path-ambient .path-title { font-size: 10px; font-weight: 700; color: #92400E; text-transform: uppercase; letter-spacing: .4px; margin-bottom: 6px; }
-.amb-note { font-size: 11px; color: #78350F; font-style: italic; background: #FEF9C3; border-radius: 4px; padding: 4px 7px; margin-bottom: 8px; line-height: 1.4; }
-
-/* ── Behavior rows ───────────────────── */
-.behavior { display: flex; align-items: center; flex-wrap: wrap; gap: 3px; margin-bottom: 5px; }
-.beh-icon  { display: inline-flex; align-items: center; gap: 4px; background: white; border: 1px solid #FDE68A; border-radius: 4px; padding: 2px 7px; font-size: 11px; font-weight: 600; color: #78350F; white-space: nowrap; flex-shrink: 0; }
-.beh-arr   { color: #D97706; font-size: 13px; flex-shrink: 0; }
-.beh-step  { background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 4px; padding: 2px 6px; font-size: 10px; color: #92400E; white-space: nowrap; }
-.beh-end   { background: #FEF3C7; border: 1px solid #F59E0B; border-radius: 4px; padding: 2px 6px; font-size: 10px; color: #78350F; font-weight: 600; white-space: nowrap; }
-
-/* ── Metrics section ─────────────────── */
-.channel-metrics {
-  border-top: 1px solid #E2E8F0; background: #F8FAFC;
-  padding: 10px 14px 12px;
+/* ── Sources column ──────────────────── */
+.sources-col {
+  display: flex; flex-direction: column;
+  gap: 4px; flex-shrink: 0;
+  /* Right border = trunk of the tree */
+  border-right: 2px solid #CBD5E1;
+  padding-right: 0; margin-right: 0;
 }
-.metrics-header {
-  font-size: 9px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: .5px; color: #94A3B8; margin-bottom: 8px;
+.src-item {
+  display: flex; align-items: center;
+  position: relative;
+}
+/* Horizontal branch line to trunk */
+.src-item::after {
+  content: '';
+  position: absolute; right: -8px; top: 50%;
+  width: 8px; height: 2px; background: #CBD5E1;
+}
+.src-node {
+  background: white; border: 1px solid #E2E8F0;
+  border-left: 3px solid #94A3B8;
+  border-radius: 6px; padding: 5px 9px;
+  min-width: 165px; max-width: 165px;
+}
+.src-name   { font-size: 11px; font-weight: 600; color: #334155; display: block; }
+.src-metric { font-size: 10px; color: #64748B; font-style: italic; display: block; margin-top: 1px; }
+
+/* ── Trunk connector to destinations ─── */
+.trunk-conn {
+  display: flex; align-items: center;
+  flex-shrink: 0; align-self: center;
+}
+.trunk-line {
+  width: 20px; height: 2px; background: #CBD5E1;
+}
+.trunk-arrow {
+  color: #94A3B8; font-size: 14px; margin-left: -2px;
 }
 
-/* Stage funnel */
-.stages-flow { display: flex; align-items: flex-start; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
-.stage-item {
-  background: white; border: 1px solid #E2E8F0; border-radius: 6px;
-  padding: 5px 9px; border-left: 3px solid var(--sc);
-  min-width: 120px; flex-shrink: 0;
+/* ── Funnels column ──────────────────── */
+.funnels-col {
+  display: flex; flex-direction: column;
+  gap: 6px; flex-shrink: 0;
 }
-.stage-lbl  { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .3px; color: var(--sc); margin-bottom: 2px; }
-.stage-met  { font-size: 11px; color: #334155; line-height: 1.35; }
-.stage-sub  { font-size: 10px; color: #64748B; margin-top: 2px; font-style: italic; }
-.stage-arr  { color: #CBD5E1; font-size: 16px; align-self: center; flex-shrink: 0; padding: 0 1px; }
 
-/* KPIs */
-.kpis-row { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; }
-.kpis-lbl { font-size: 9px; font-weight: 700; color: #4F46E5; text-transform: uppercase; letter-spacing: .4px; }
-.kpi-chip {
-  background: #EEF2FF; color: #3730A3; border: 1px solid #C7D2FE;
-  border-radius: 5px; padding: 3px 9px; font-size: 11px; font-weight: 600;
+/* ── Single funnel row ───────────────── */
+.funnel-line {
+  display: flex; align-items: center; gap: 0; flex-shrink: 0;
 }
+
+/* ── Destination node ────────────────── */
+.dest-node {
+  min-width: 130px; max-width: 130px;
+  border-radius: 7px; padding: 6px 10px;
+  border: 1.5px solid var(--dc);
+  background: var(--db);
+  flex-shrink: 0;
+}
+.dest-name { font-size: 11px; font-weight: 700; color: var(--dc); display: block; line-height: 1.3; }
+.dest-sub  { font-size: 9px; color: var(--dc); opacity: .7; display: block; margin-top: 1px; }
+
+/* ── Stage connector (arrow + taxa) ──── */
+.stage-conn {
+  display: flex; flex-direction: column;
+  align-items: center; flex-shrink: 0;
+  width: 56px;
+}
+.conn-line-wrap {
+  display: flex; align-items: center; width: 100%;
+}
+.conn-dash { flex: 1; height: 1.5px; background: #CBD5E1; }
+.conn-head { color: #94A3B8; font-size: 12px; margin-left: -3px; }
+.conn-taxa {
+  font-size: 9px; color: #94A3B8; font-style: italic;
+  text-align: center; margin-top: 1px; line-height: 1.2; white-space: nowrap;
+}
+
+/* ── Stage node ──────────────────────── */
+.stage-node {
+  background: white; border: 1px solid #E2E8F0;
+  border-radius: 7px; padding: 6px 9px;
+  min-width: 90px; max-width: 90px; flex-shrink: 0;
+}
+.stage-label  { font-size: 11px; font-weight: 600; color: #1E293B; display: block; }
+.stage-metric { font-size: 9px; color: #64748B; font-style: italic; display: block; margin-top: 1px; }
+
+/* ── Result node ─────────────────────── */
+.result-node {
+  background: #F8FAFC; border: 2px solid #94A3B8;
+  border-radius: 7px; padding: 6px 9px;
+  min-width: 90px; max-width: 90px; flex-shrink: 0;
+}
+.result-node .stage-label  { color: #0F172A; font-size: 12px; }
+.result-node .stage-metric { color: #475569; }
 
 /* ── Responsive ──────────────────────── */
-@media (max-width: 820px) {
-  .channel-paths { grid-template-columns: 1fr; }
-  .channel-top   { flex-direction: column; }
-  .top-arrow     { transform: rotate(90deg); padding: 4px 0; align-self: flex-start; }
+@media (max-width: 900px) {
+  .funnel-view { flex-direction: column; gap: 10px; }
+  .sources-col { border-right: none; border-bottom: 2px solid #CBD5E1; padding-bottom: 8px; }
+  .src-item::after { display: none; }
+  .trunk-conn { transform: rotate(90deg); margin: 4px auto; }
 }
 </style>
 </head>
@@ -154,169 +169,111 @@ body {
 
 <div class="page-header">
   <h1>Fluxo de Chamadas por Origem / Mídia — CazéTV Copa 2026</h1>
-  <p>Cada canal mostra: <strong>como funciona + a chamada</strong> → bifurcação em <strong>comportamento rastreável</strong> (clique/QR) e <strong>ambient</strong> (locução/memória) → <strong>métricas brutas por etapa</strong> do funil + <strong>2–3 KPIs finais</strong> que respondem se a chamada foi boa. <strong>CAM</strong> = Camiseteria (ML) · <strong>BOL</strong> = Bolão (iFood/LiveLike).</p>
+  <p class="subtitle">Cada canal mostra as origens de entrada com suas métricas, convergindo para o destino (Loja MELI ou Bolão iFood), seguido do funil com taxa de conversão entre cada etapa. <strong>CAM</strong> = Camiseteria · <strong>BOL</strong> = Bolão.</p>
   <div class="legend">
-    <span class="leg-item"><span class="leg-bar" style="background:#3B82F6"></span>Como funciona</span>
-    <span class="leg-item"><span class="leg-bar" style="background:#F59E0B"></span>A Chamada</span>
-    <span class="leg-sep">|</span>
-    <span class="leg-item"><span style="background:#DCFCE7;color:#15803D;padding:1px 6px;border-radius:3px;font-size:11px;font-weight:700">🔗 Rastreável</span></span>
-    <span class="leg-item"><span style="background:#FEF3C7;color:#92400E;padding:1px 6px;border-radius:3px;font-size:11px;font-weight:700;border:1px dashed #FCD34D">🔊 Ambient</span></span>
-    <span class="leg-sep">|</span>
-    <span class="leg-item"><span class="kpi-chip" style="font-size:10px">KPI final</span> métricas de veredito da chamada</span>
+    <span>Timing: </span>
+    <span class="badge b-rt">RT</span> Real-time &nbsp;
+    <span class="badge b-id">ID</span> Intraday &nbsp;
+    <span class="badge b-d1">D+1</span> &nbsp;
+    <span class="badge b-d3">D+3/7</span> &nbsp;
+    <span class="badge b-sem">SEM</span> Semanal &nbsp;
+    <span class="badge b-enc">ENC</span> Ao encerrar
   </div>
 </div>
 
 <div id="app"></div>
 
 <script>
-const TM = { RT:['RT','b-rt'], ID:['ID','b-id'], D1:['D+1','b-d1'], D3:['D+3/7','b-d3'], SEM:['SEM','b-sem'], ENC:['ENC','b-enc'] };
-// Stage colors
-const SC = { aud:'#3B82F6', ses:'#10B981', orig:'#F59E0B', conv:'#8B5CF6', eng:'#EC4899', exp:'#64748B' };
+const TM = {
+  RT:['RT','b-rt'], ID:['ID','b-id'], D1:['D+1','b-d1'],
+  D3:['D+3/7','b-d3'], SEM:['SEM','b-sem'], ENC:['ENC','b-enc']
+};
 
-const data = [
+// Standard funnels
+const F_CAM = {
+  dest:'Loja CazéTV', destSub:'Mercado Livre',
+  destColor:'#1D4ED8', destBg:'#EFF6FF',
+  stages:[
+    {l:'Produto',     m:'visualizações da página'},
+    {l:'Carrinho',    m:'add to cart'},
+    {l:'Pedido',      m:'conversões'},
+  ],
+  taxas:['% pg → cart','% cart → pedido'],
+  result:{l:'Receita', m:'R$ atribuído'}
+};
+const F_BOL = {
+  dest:'Bolão CazéTV', destSub:'iFood · LiveLike',
+  destColor:'#B45309', destBg:'#FFFBEB',
+  stages:[
+    {l:'Cadastro', m:'novos registros'},
+    {l:'Palpite',  m:'1º palpite feito'},
+  ],
+  taxas:['% cad → palpite'],
+  result:{l:'Retenção', m:'retorno no próx. jogo'}
+};
+const F_TIKSHOP = {
+  dest:'TikTok Shop', destSub:'compra in-app',
+  destColor:'#000', destBg:'#F5F5F5',
+  stages:[
+    {l:'Produto', m:'impressões do produto'},
+    {l:'Carrinho',m:'add to cart'},
+    {l:'Pedido',  m:'conversão in-app'},
+  ],
+  taxas:['% imp → cart','% cart → pedido'],
+  result:{l:'Receita', m:'R$ in-app'}
+};
+
+const platforms = [
  {
   name:'YouTube', icon:'▶', color:'#CC0000', bg:'#FFF5F5',
   channels:[
    {
-    media:'Lives', produtos:['CAM','BOL'], timing:'RT',
-    mec:'Transmissão ao vivo da Copa. 104 jogos no YouTube gratuito. Usuário assiste em TV, celular ou computador — pico massivo de audiência no Brasil.',
-    cham:'Fala verbal do apresentador ("galera, compra a camiseta no ML!") + QR code exibido na arte da tela + link fixado no chat da live',
-    tracked:{
-     label:'🔗 Via QR code / link fixado no chat',
-     acao:'Escaneia o QR code na tela OU clica no link fixado no chat durante a transmissão',
-     destinos:['ML — Loja CazéTV','iFood — Bolão CazéTV']
-    },
-    ambient:{
-     label:'🔊 Via locução / memória visual',
-     nota:'Ouviu ou viu a chamada mas não usou QR nem link — age horas ou dias depois, especialmente pós-jogo',
-     behaviors:[
-      {icon:'🔍',label:'Google',steps:['busca "camiseta cazétv copa"'],end:'ML Loja CazéTV'},
-      {icon:'🔍',label:'Google (bolão)',steps:['busca "bolão cazétv copa 2026"'],end:'iFood Bolão'},
-      {icon:'🛒',label:'ML direto + busca',steps:['acessa Mercado Livre','busca "cazétv" na barra'],end:'Loja CazéTV'},
-      {icon:'🛒',label:'ML direto + banner',steps:['acessa Mercado Livre','vê banner/destaque Copa'],end:'Loja CazéTV'},
-      {icon:'🍕',label:'iFood direto',steps:['acessa iFood','busca "bolão" ou seção Copa'],end:'Bolão CazéTV'},
-      {icon:'🤖',label:'AI (ChatGPT/Claude)',steps:['pergunta "onde comprar camiseta cazétv?"','recebe link'],end:'destino'},
-      {icon:'🌐',label:'URL direta',steps:['digita URL da loja ou do bolão'],end:'destino'}
-     ]
-    },
-    metrics:{
-     stages:[
-      {lbl:'AUDIÊNCIA',met:'Espectadores ao vivo simultâneos',c:'aud'},
-      {lbl:'SESSÕES',met:'Visitas loja MELI + Visitas app iFood',c:'ses',sub:'Origem: Home MELI · SEO/Google · AI · UTM direto (QR/link)'},
-      {lbl:'CONVERSÃO',met:'Pedidos realizados (MELI) + Palpites feitos (iFood)',c:'conv'}
-     ],
-     kpis:['% audiência → visita ao destino (sessões / espectadores)','Uplift de sessões vs. baseline pré-chamada','Conversões atribuídas à chamada (rastreável + orgânico estimado)']
-    }
+    media:'Lives', timing:'RT', prods:['CAM','BOL'],
+    sources:[
+      {n:'Audiência ao vivo',       m:'espectadores simultâneos'},
+      {n:'QR Code / link no chat',  m:'scans + cliques (UTM)'},
+      {n:'Home MELI / iFood',       m:'sessões via banner'},
+      {n:'SEO / Google',            m:'buscas "cazétv copa"'},
+      {n:'AI (ChatGPT, Claude)',     m:'cliques em link sugerido'},
+    ],
+    funnels:[F_CAM, F_BOL]
    },
    {
-    media:'Vídeos', produtos:['CAM','BOL'], timing:'D1',
-    mec:'Vídeo publicado (highlights, resumos de jogos). Aparece nas recomendações, na busca e no feed do YouTube.',
-    cham:'Thumbnail + título chamativo. Dentro do vídeo: card clicável sobrepost + CTA verbal + link na descrição.',
-    tracked:{
-     label:'🔗 Via card / link na descrição',
-     acao:'Clica no card sobreposto durante o vídeo OU expande a descrição e clica no link',
-     destinos:['ML — Loja CazéTV','iFood — Bolão CazéTV']
-    },
-    ambient:{
-     label:'🔊 Via thumbnail / memória visual',
-     nota:'Assistiu parcialmente ou viu o thumbnail mas não clicou nos links — busca depois',
-     behaviors:[
-      {icon:'🔍',label:'Google',steps:['busca "camiseta cazétv copa"'],end:'ML loja'},
-      {icon:'🛒',label:'ML direto',steps:['acessa ML','busca "cazétv"'],end:'Loja CazéTV'},
-      {icon:'🔁',label:'Volta ao YouTube',steps:['busca o vídeo','abre a descrição'],end:'clica no link'}
-     ]
-    },
-    metrics:{
-     stages:[
-      {lbl:'EXPOSIÇÃO',met:'Impressões do thumbnail',c:'exp'},
-      {lbl:'INTERESSE',met:'CTR do thumbnail → Visualizações',c:'aud'},
-      {lbl:'SESSÕES',met:'Visitas MELI + iFood via UTM/link',c:'ses',sub:'Origem: link do vídeo · SEO · direto'},
-      {lbl:'CONVERSÃO',met:'Pedidos + Palpites',c:'conv'}
-     ],
-     kpis:['CTR do thumbnail (benchmark: 3–6% é bom para Copa)','Sessões ML/iFood atribuídas ao vídeo','Conversões por vídeo']
-    }
+    media:'Vídeos', timing:'D1', prods:['CAM','BOL'],
+    sources:[
+      {n:'Impressões (thumbnail)', m:'impressões no feed/busca'},
+      {n:'Link no vídeo / desc.',  m:'cliques no card ou link'},
+      {n:'SEO / Google',           m:'buscas "cazétv copa"'},
+      {n:'AI (ChatGPT, Claude)',   m:'cliques em link sugerido'},
+    ],
+    funnels:[F_CAM, F_BOL]
    },
    {
-    media:'Shorts', produtos:['CAM','BOL'], timing:'D1',
-    mec:'Vídeo vertical ≤ 60s. Aba Shorts e feed. Consumo rápido em swipe — alta exposição, baixa fricção de clique.',
-    cham:'CTA verbal rápido nos últimos segundos + link na descrição + pinned comment com link',
-    tracked:{
-     label:'🔗 Via link na descrição / pinned comment',
-     acao:'Para o swipe → abre a descrição OU os comentários fixados → clica no link',
-     destinos:['ML — Loja CazéTV','iFood — Bolão CazéTV']
-    },
-    ambient:{
-     label:'🔊 Via memória do conteúdo',
-     nota:'Assistiu no swipe mas não abriu a descrição — lembrou da marca e buscou depois',
-     behaviors:[
-      {icon:'🔍',label:'Google',steps:['busca "cazétv copa camiseta"'],end:'destino'},
-      {icon:'🛒',label:'ML direto',steps:['acessa ML','busca "cazétv"'],end:'Loja CazéTV'},
-      {icon:'🍕',label:'iFood direto',steps:['acessa iFood','busca "bolão copa"'],end:'Bolão CazéTV'}
-     ]
-    },
-    metrics:{
-     stages:[
-      {lbl:'EXPOSIÇÃO',met:'Impressões na aba Shorts',c:'exp'},
-      {lbl:'CONSUMO',met:'Visualizações · Taxa de conclusão',c:'aud'},
-      {lbl:'SESSÕES',met:'Visitas MELI + iFood via UTM',c:'ses',sub:'Origem: link da descrição · pinned comment · SEO'},
-      {lbl:'CONVERSÃO',met:'Pedidos + Palpites',c:'conv'}
-     ],
-     kpis:['Taxa de conclusão (sinal de qualidade do Short)','Sessões ML/iFood atribuídas','CTR (cliques / visualizações)']
-    }
+    media:'Shorts', timing:'D1', prods:['CAM','BOL'],
+    sources:[
+      {n:'Impressões (aba Shorts)', m:'impressões no feed Shorts'},
+      {n:'Link na descrição',       m:'cliques (após parar o swipe)'},
+      {n:'Pinned comment',          m:'cliques no comentário fixado'},
+      {n:'SEO / Google',            m:'buscas após ver o Short'},
+    ],
+    funnels:[F_CAM, F_BOL]
    },
    {
-    media:'Playlists', produtos:['CAM','BOL'], timing:'SEM',
-    mec:'Coleção de jogos/conteúdos agrupados. Usuário assiste em sequência — exposição repetida à marca.',
-    cham:'Link fixo na descrição da playlist. Cards e end screens nos vídeos. Exposição repetida ao longo da série.',
-    tracked:{
-     label:'🔗 Via link na descrição / cards',
-     acao:'Assiste múltiplos vídeos → clica no link da descrição da playlist ou em card/end screen',
-     destinos:['ML — Loja CazéTV','iFood — Bolão CazéTV']
-    },
-    ambient:{
-     label:'🔊 Via exposição repetida',
-     nota:'Viu CTAs em vários vídeos da playlist — intenção acumulada, age depois por outros caminhos',
-     behaviors:[
-      {icon:'🔍',label:'Google',steps:['busca a marca após múltiplos vídeos'],end:'destino'},
-      {icon:'🛒',label:'ML direto',steps:['acessa ML','busca "cazétv"'],end:'Loja CazéTV'}
-     ]
-    },
-    metrics:{
-     stages:[
-      {lbl:'INÍCIO',met:'Playlist starts',c:'aud'},
-      {lbl:'ENGAJAMENTO',met:'Média de vídeos assistidos por start',c:'eng'},
-      {lbl:'SESSÕES',met:'Visitas MELI + iFood via link/UTM',c:'ses'},
-      {lbl:'CONVERSÃO',met:'Pedidos + Palpites',c:'conv'}
-     ],
-     kpis:['Taxa de continuidade (média vídeos/start)','Sessões ML/iFood atribuídas à playlist','Conversões originadas de playlists']
-    }
+    media:'Playlists', timing:'SEM', prods:['CAM','BOL'],
+    sources:[
+      {n:'Playlist starts',      m:'inícios da playlist'},
+      {n:'Link na descrição',    m:'cliques no link da playlist'},
+      {n:'Card / end screen',    m:'cliques nos cards dos vídeos'},
+    ],
+    funnels:[F_CAM, F_BOL]
    },
    {
-    media:'Posts do canal', produtos:['CAM','BOL'], timing:'D1',
-    mec:'Post na aba Comunidade do canal YouTube. Inscritos recebem notificação — base ativa de fãs.',
-    cham:'Imagem do produto ou bolão + texto com CTA + link clicável no post',
-    tracked:{
-     label:'🔗 Via link no post',
-     acao:'Recebe notificação → abre o post → clica no link diretamente',
-     destinos:['ML — Loja CazéTV','iFood — Bolão CazéTV']
-    },
-    ambient:{
-     label:'🔊 Via notificação / visual',
-     nota:'Viu a notificação ou o post mas não clicou — guarda a informação para depois',
-     behaviors:[
-      {icon:'🔍',label:'Google',steps:['busca "cazétv camiseta" ou "bolão cazétv"'],end:'destino'},
-      {icon:'🛒',label:'ML direto',steps:['acessa ML','busca "cazétv"'],end:'loja'}
-     ]
-    },
-    metrics:{
-     stages:[
-      {lbl:'ALCANCE',met:'Impressões do post (notificados)',c:'exp'},
-      {lbl:'ENGAJAMENTO',met:'Likes + Comentários / Impressões',c:'eng'},
-      {lbl:'SESSÕES',met:'Cliques no link → Visitas MELI/iFood',c:'ses'},
-      {lbl:'CONVERSÃO',met:'Pedidos + Palpites',c:'conv'}
-     ],
-     kpis:['Taxa de engajamento do post','Cliques no link por post','Sessões atribuídas']
-    }
+    media:'Posts do canal', timing:'D1', prods:['CAM','BOL'],
+    sources:[
+      {n:'Impressões do post',  m:'notificações abertas + feed'},
+      {n:'Link no post',        m:'cliques no link do post'},
+    ],
+    funnels:[F_CAM, F_BOL]
    }
   ]
  },
@@ -324,171 +281,59 @@ const data = [
   name:'Instagram', icon:'◈', color:'#C13584', bg:'#FDF4F9',
   channels:[
    {
-    media:'Stories', produtos:['CAM','BOL'], timing:'ID',
-    mec:'Story de 15s. Aparece no topo do feed. Dura 24h. Consumo rápido — usuário desliza entre stories.',
-    cham:'Arte com produto/bolão + sticker de link (tap direto para o destino)',
-    tracked:{
-     label:'🔗 Via sticker de link',
-     acao:'Toca no sticker de link no story → redirecionado diretamente ao destino',
-     destinos:['ML — Loja CazéTV','iFood — Bolão CazéTV']
-    },
-    ambient:{
-     label:'🔊 Via memória visual',
-     nota:'Deslizou sem clicar mas registrou a imagem — busca depois, especialmente perto do jogo',
-     behaviors:[
-      {icon:'🔍',label:'Google',steps:['busca "camiseta cazétv"'],end:'ML loja'},
-      {icon:'🛒',label:'ML direto',steps:['acessa ML','busca ou vê banner'],end:'Loja CazéTV'},
-      {icon:'🍕',label:'iFood direto',steps:['acessa iFood','busca "bolão"'],end:'Bolão CazéTV'}
-     ]
-    },
-    metrics:{
-     stages:[
-      {lbl:'ALCANCE',met:'Usuários que viram o story',c:'exp'},
-      {lbl:'AÇÃO',met:'Cliques no sticker de link · Taxa de saída (abandono)',c:'aud'},
-      {lbl:'SESSÕES',met:'Visitas MELI + iFood',c:'ses',sub:'Origem: sticker · SEO pós-story · direto'},
-      {lbl:'CONVERSÃO',met:'Pedidos + Palpites',c:'conv'}
-     ],
-     kpis:['Taxa de saída (story que perde audiência no meio = chamada fraca)','CTR do sticker (cliques / alcance)','CPA — custo por aquisição (pago)']
-    }
+    media:'Stories', timing:'ID', prods:['CAM','BOL'],
+    sources:[
+      {n:'Alcance do story',    m:'usuários que viram'},
+      {n:'Sticker de link',     m:'taps no sticker'},
+      {n:'SEO pós-story',       m:'buscas após ver o story'},
+    ],
+    funnels:[F_CAM, F_BOL]
    },
    {
-    media:'Reels', produtos:['CAM','BOL'], timing:'D3',
-    mec:'Vídeo até 90s. Feed e aba Reels. Alto alcance orgânico — atinge não-seguidores via algoritmo.',
-    cham:'CTA verbal/visual no reel + legenda com "link na bio" + texto sobreposto no final',
-    tracked:{
-     label:'🔗 Via link na bio (pós-reel)',
-     acao:'Assiste ao reel → toca no perfil → visita o perfil CazéTV → clica no link da bio',
-     destinos:['ML — Loja CazéTV','iFood — Bolão CazéTV']
-    },
-    ambient:{
-     label:'🔊 Via memória do reel',
-     nota:'Assistiu mas não foi ao perfil — ficou com a marca na memória, busca depois ou volta ao reel',
-     behaviors:[
-      {icon:'🔍',label:'Google',steps:['busca "camiseta cazétv copa"'],end:'ML loja'},
-      {icon:'🛒',label:'ML direto',steps:['acessa ML','busca "cazétv"'],end:'loja'},
-      {icon:'🔁',label:'Volta ao reel',steps:['busca o reel no IG','vai ao perfil'],end:'link da bio'}
-     ]
-    },
-    metrics:{
-     stages:[
-      {lbl:'CONSUMO',met:'Plays · Taxa de conclusão · % não-seguidores',c:'aud'},
-      {lbl:'INTENÇÃO',met:'Visitas ao perfil CazéTV vindas do reel',c:'eng'},
-      {lbl:'SESSÕES',met:'Cliques no link da bio → MELI + iFood',c:'ses',sub:'Origem: bio IG · SEO · direto'},
-      {lbl:'CONVERSÃO',met:'Pedidos + Palpites',c:'conv'}
-     ],
-     kpis:['Taxa de conclusão (quanto do reel foi assistido)','Visitas ao perfil por reel','Sessões ML/iFood atribuídas ao reel']
-    }
+    media:'Reels', timing:'D3', prods:['CAM','BOL'],
+    sources:[
+      {n:'Plays',                m:'reproduções totais'},
+      {n:'Visitas ao perfil',    m:'toque no perfil pós-reel'},
+      {n:'Link na bio',          m:'cliques no link da bio'},
+      {n:'SEO / Google',         m:'buscas após ver o reel'},
+    ],
+    funnels:[F_CAM, F_BOL]
    },
    {
-    media:'Posts (feed)', produtos:['CAM','BOL'], timing:'D3',
-    mec:'Imagem ou carrossel no feed. Alcança seguidores e pode aparecer no Explorar.',
-    cham:'Arte do produto/bolão + CTA na legenda ("link na bio")',
-    tracked:{
-     label:'🔗 Via link na bio (pós-post)',
-     acao:'Vê o post → toca no perfil → visita o perfil CazéTV → clica no link da bio',
-     destinos:['ML — Loja CazéTV','iFood — Bolão CazéTV']
-    },
-    ambient:{
-     label:'🔊 Via memória visual do post',
-     nota:'Curtiu ou salvou o post mas não foi ao perfil — volta depois ou busca diretamente',
-     behaviors:[
-      {icon:'🔍',label:'Google',steps:['busca "cazétv camiseta copa"'],end:'destino'},
-      {icon:'🛒',label:'ML direto',steps:['acessa ML','busca "cazétv"'],end:'loja'},
-      {icon:'🔁',label:'Post salvo',steps:['abre posts salvos no IG','vai ao perfil'],end:'link da bio'}
-     ]
-    },
-    metrics:{
-     stages:[
-      {lbl:'ALCANCE',met:'Usuários únicos que viram o post',c:'exp'},
-      {lbl:'ENGAJAMENTO',met:'Likes + Comentários + Salvamentos / Alcance',c:'eng'},
-      {lbl:'SESSÕES',met:'Visitas ao perfil → Cliques na bio → MELI/iFood',c:'ses'},
-      {lbl:'CONVERSÃO',met:'Pedidos + Palpites',c:'conv'}
-     ],
-     kpis:['Taxa de engajamento (benchmark IG: 1–3% é bom)','Salvamentos (proxy de intenção futura)','Sessões MELI/iFood atribuídas ao post']
-    }
+    media:'Posts (feed)', timing:'D3', prods:['CAM','BOL'],
+    sources:[
+      {n:'Alcance do post',      m:'usuários únicos que viram'},
+      {n:'Visitas ao perfil',    m:'toque no perfil pós-post'},
+      {n:'Link na bio',          m:'cliques no link da bio'},
+      {n:'Posts salvos',         m:'salvamentos (intenção futura)'},
+    ],
+    funnels:[F_CAM, F_BOL]
    },
    {
-    media:'Bio', produtos:['CAM','BOL'], timing:'SEM',
-    mec:'Link permanente no perfil. Ponto de entrada para qualquer pessoa que visita o perfil CazéTV.',
-    cham:'Links fixos na bio — Linktree ou direto para ML / iFood',
-    tracked:{
-     label:'🔗 Via clique no link da bio',
-     acao:'Visita o perfil CazéTV (vindo de qualquer conteúdo) → clica no link da bio',
-     destinos:['ML — Loja CazéTV','iFood — Bolão CazéTV']
-    },
-    ambient:{
-     label:'🔊 Absorção do nome de marca',
-     nota:'Visitou o perfil mas não clicou — viu o nome, absorveu, pode buscar depois',
-     behaviors:[
-      {icon:'🔍',label:'Google',steps:['busca "cazétv copa loja"'],end:'destino'},
-      {icon:'🛒',label:'ML direto',steps:['acessa ML','busca "cazétv"'],end:'loja'}
-     ]
-    },
-    metrics:{
-     stages:[
-      {lbl:'VISITAS',met:'Visitas ao perfil (todas as origens)',c:'exp'},
-      {lbl:'AÇÃO',met:'Cliques no link da bio',c:'aud'},
-      {lbl:'SESSÕES',met:'Visitas MELI + iFood via bio',c:'ses'},
-      {lbl:'CONVERSÃO',met:'Pedidos + Palpites',c:'conv'}
-     ],
-     kpis:['Taxa conversão perfil → clique na bio (drop indica bio ruim)','Distribuição de cliques: MELI vs. iFood','Sessões geradas por visita ao perfil']
-    }
+    media:'Bio', timing:'SEM', prods:['CAM','BOL'],
+    sources:[
+      {n:'Visitas ao perfil',    m:'todas as origens'},
+      {n:'Cliques no link',      m:'taps no link da bio'},
+    ],
+    funnels:[F_CAM, F_BOL]
    },
    {
-    media:'Comunidade CazéTV', produtos:['CAM','BOL'], timing:'SEM',
-    mec:'Canal de broadcast nativo do IG. Apenas CazéTV envia. Membros recebem notificação direta — audiência opt-in quente.',
-    cham:'Mensagem com arte do produto/bolão + link direto para compra ou palpite',
-    tracked:{
-     label:'🔗 Via link na mensagem',
-     acao:'Recebe notificação → abre a mensagem → clica no link diretamente',
-     destinos:['ML — Loja CazéTV','iFood — Bolão CazéTV']
-    },
-    ambient:{
-     label:'🔊 Via notificação (abriu, não clicou)',
-     nota:'Abriu a mensagem, viu arte e CTA, mas não clicou — age depois por outros caminhos',
-     behaviors:[
-      {icon:'🔍',label:'Google',steps:['busca "cazétv copa"'],end:'destino'},
-      {icon:'🛒',label:'ML direto',steps:['acessa ML','busca "cazétv"'],end:'loja'},
-      {icon:'🍕',label:'iFood direto',steps:['acessa iFood','busca "bolão"'],end:'Bolão CazéTV'}
-     ]
-    },
-    metrics:{
-     stages:[
-      {lbl:'MEMBROS',met:'Total de membros da comunidade',c:'exp'},
-      {lbl:'ABERTURA',met:'Taxa de abertura da mensagem',c:'aud'},
-      {lbl:'AÇÃO',met:'Cliques no link / mensagem aberta',c:'eng'},
-      {lbl:'SESSÕES',met:'Visitas MELI + iFood via UTM',c:'ses'}
-     ],
-     kpis:['Taxa de abertura (benchmark WhatsApp-like: >30% é bom)','CTR do link (cliques / aberturas)','Sessões por disparo']
-    }
+    media:'Comunidade CazéTV', timing:'SEM', prods:['CAM','BOL'],
+    sources:[
+      {n:'Membros ativos',      m:'total na comunidade'},
+      {n:'Taxa de abertura',    m:'mensagens abertas (%)'},
+      {n:'Cliques no link',     m:'taps no link da mensagem'},
+    ],
+    funnels:[F_CAM, F_BOL]
    },
    {
-    media:'Comunidade Casimiro', produtos:['CAM','BOL'], timing:'SEM',
-    mec:'Canal do Casimiro no IG. CazéTV não controla — monitoramento externo via BrandWatch.',
-    cham:'Casimiro menciona produto/bolão organicamente — sem link, apenas menção de marca pela voz/texto',
-    tracked:{
-     label:'🔗 Sem path rastreável',
-     acao:'CazéTV não publica aqui. Não há link nem QR code. Todo o tráfego gerado é orgânico.',
-     destinos:['Tráfego 100% orgânico (não rastreável por UTM)']
-    },
-    ambient:{
-     label:'🔊 100% Ambient — via voz do Casimiro',
-     nota:'Todo comportamento gerado aqui é não rastreável. Depende da força da menção e da audiência.',
-     behaviors:[
-      {icon:'🔍',label:'Google (camiseta)',steps:['busca "camiseta cazétv casimiro"'],end:'ML loja'},
-      {icon:'🔍',label:'Google (bolão)',steps:['busca "bolão cazétv copa"'],end:'iFood Bolão'},
-      {icon:'🛒',label:'ML direto',steps:['acessa ML','busca "cazétv"'],end:'loja'},
-      {icon:'👥',label:'Compartilha',steps:['repassa info para amigos/grupo'],end:'amigo busca'}
-     ]
-    },
-    metrics:{
-     stages:[
-      {lbl:'MENÇÕES',met:'Volume de menções à CazéTV/produto na comunidade',c:'exp'},
-      {lbl:'SENTIMENTO',met:'% positivo / neutro / negativo das menções',c:'eng'},
-      {lbl:'UPLIFT',met:'Pico de sessões orgânicas MELI/iFood correlacionado com menção',c:'ses'}
-     ],
-     kpis:['Volume de menções por post do Casimiro','Sentimento predominante','Correlação menção × uplift orgânico MELI/iFood']
-    }
+    media:'Comunidade Casimiro', timing:'SEM', prods:['CAM','BOL'],
+    sources:[
+      {n:'Menções à CazéTV',    m:'volume (BrandWatch)'},
+      {n:'Sentimento',          m:'% pos / neu / neg'},
+      {n:'SEO / Google',        m:'buscas "cazétv casimiro"'},
+    ],
+    funnels:[F_CAM, F_BOL]
    }
   ]
  },
@@ -496,141 +341,47 @@ const data = [
   name:'TikTok', icon:'♪', color:'#010101', bg:'#F5F5F5',
   channels:[
    {
-    media:'Vídeos', produtos:['CAM','BOL'], timing:'ID',
-    mec:'Vídeo no TikTok. Distribuído pelo For You Page (FYP). Alcance orgânico alto — atinge quem não segue.',
-    cham:'CTA verbal no vídeo ("link na bio!") + texto sobreposto no final + link na bio do perfil',
-    tracked:{
-     label:'🔗 Via link na bio (pós-vídeo)',
-     acao:'Vê no FYP → assiste → vai ao perfil CazéTV → clica no link da bio',
-     destinos:['ML — Loja CazéTV','iFood — Bolão CazéTV']
-    },
-    ambient:{
-     label:'🔊 Via FYP / memória do vídeo',
-     nota:'Viu no scroll mas não foi ao perfil — ficou com a marca, busca depois',
-     behaviors:[
-      {icon:'🔍',label:'Google',steps:['busca "camiseta cazétv" ou "bolão cazétv"'],end:'destino'},
-      {icon:'🛒',label:'ML direto',steps:['acessa ML','busca "cazétv"'],end:'loja'},
-      {icon:'🍕',label:'iFood direto',steps:['acessa iFood','busca "bolão copa"'],end:'Bolão CazéTV'},
-      {icon:'🔁',label:'Volta ao TikTok',steps:['busca @cazétv','vai ao perfil'],end:'link da bio'}
-     ]
-    },
-    metrics:{
-     stages:[
-      {lbl:'CONSUMO',met:'Visualizações · % via FYP (não-seguidores)',c:'aud'},
-      {lbl:'QUALIDADE',met:'Taxa de conclusão (sinal ao algoritmo)',c:'eng'},
-      {lbl:'SESSÕES',met:'Visitas MELI + iFood via bio/UTM',c:'ses',sub:'Origem: bio TikTok · SEO · iFood direto · AI'},
-      {lbl:'CONVERSÃO',met:'Pedidos + Palpites',c:'conv'}
-     ],
-     kpis:['Taxa de conclusão nas 2h iniciais (define distribuição FYP)','% alcance via FYP (mede viralidade)','Sessões ML/iFood atribuídas ao vídeo']
-    }
+    media:'Vídeos', timing:'ID', prods:['CAM','BOL'],
+    sources:[
+      {n:'For You Page (FYP)',   m:'visualizações via FYP'},
+      {n:'Taxa de conclusão',    m:'% que assiste até o fim'},
+      {n:'Link na bio',          m:'cliques pós-vídeo'},
+      {n:'SEO / Google',         m:'buscas após ver o vídeo'},
+    ],
+    funnels:[F_CAM, F_BOL]
    },
    {
-    media:'Posts', produtos:['CAM','BOL'], timing:'D1',
-    mec:'Conteúdo estático ou carrossel no perfil TikTok. Aparece para seguidores e pode ser distribuído.',
-    cham:'Imagem/texto com CTA + "link na bio"',
-    tracked:{
-     label:'🔗 Via link na bio',
-     acao:'Vê o post → vai ao perfil → clica no link da bio',
-     destinos:['ML — Loja CazéTV','iFood — Bolão CazéTV']
-    },
-    ambient:{
-     label:'🔊 Via memória do post',
-     nota:'Viu no feed mas não clicou — recorda a marca e busca depois',
-     behaviors:[
-      {icon:'🔍',label:'Google',steps:['busca "cazétv copa"'],end:'destino'},
-      {icon:'🛒',label:'ML direto',steps:['acessa ML','busca "cazétv"'],end:'loja'}
-     ]
-    },
-    metrics:{
-     stages:[
-      {lbl:'EXPOSIÇÃO',met:'Visualizações · % via FYP',c:'exp'},
-      {lbl:'ENGAJAMENTO',met:'Likes + Comentários + Salvamentos / Visualizações',c:'eng'},
-      {lbl:'SESSÕES',met:'Visitas MELI + iFood via bio',c:'ses'},
-      {lbl:'CONVERSÃO',met:'Pedidos + Palpites',c:'conv'}
-     ],
-     kpis:['Taxa de engajamento (vs. média do perfil)','% via FYP (indica alcance além dos seguidores)','Sessões atribuídas']
-    }
+    media:'Posts', timing:'D1', prods:['CAM','BOL'],
+    sources:[
+      {n:'Visualizações',       m:'total + % via FYP'},
+      {n:'Link na bio',         m:'cliques pós-post'},
+    ],
+    funnels:[F_CAM, F_BOL]
    },
    {
-    media:'Stories', produtos:['CAM','BOL'], timing:'D1',
-    mec:'Story de 24h no TikTok. Visível para seguidores na barra de stories.',
-    cham:'Arte com CTA + sticker de link',
-    tracked:{
-     label:'🔗 Via sticker de link',
-     acao:'Vê o story → toca no sticker de link → redirecionado',
-     destinos:['ML — Loja CazéTV','iFood — Bolão CazéTV']
-    },
-    ambient:{
-     label:'🔊 Via memória visual',
-     nota:'Viu o story mas não tocou no sticker — lembrou da oferta depois',
-     behaviors:[
-      {icon:'🔍',label:'Google',steps:['busca "cazétv copa"'],end:'destino'},
-      {icon:'🛒',label:'ML direto',steps:['acessa ML','busca "cazétv"'],end:'loja'}
-     ]
-    },
-    metrics:{
-     stages:[
-      {lbl:'ALCANCE',met:'Visualizações do story',c:'exp'},
-      {lbl:'AÇÃO',met:'Taxa de conclusão · Cliques no sticker',c:'aud'},
-      {lbl:'SESSÕES',met:'Visitas MELI + iFood via link',c:'ses'},
-      {lbl:'CONVERSÃO',met:'Pedidos + Palpites',c:'conv'}
-     ],
-     kpis:['Taxa de conclusão do story','Cliques no sticker / visualizações','Sessões atribuídas']
-    }
+    media:'Stories', timing:'D1', prods:['CAM','BOL'],
+    sources:[
+      {n:'Visualizações',       m:'total de views'},
+      {n:'Sticker de link',     m:'taps no sticker'},
+    ],
+    funnels:[F_CAM, F_BOL]
    },
    {
-    media:'Lives', produtos:['CAM','BOL'], timing:'RT',
-    mec:'Transmissão ao vivo no TikTok. Audiência menor que YouTube, mas engajamento muito alto e interativo.',
-    cham:'Fala verbal do apresentador + produto mostrado em cena + link no título da live',
-    tracked:{
-     label:'🔗 Via link no título da live',
-     acao:'Assiste à live → toca no link do produto/bolão visível no título da live',
-     destinos:['ML — Loja CazéTV','iFood — Bolão CazéTV']
-    },
-    ambient:{
-     label:'🔊 Via locução / memória da live',
-     nota:'Assistiu a live mas não clicou no link — lembrou do produto depois',
-     behaviors:[
-      {icon:'🔍',label:'Google',steps:['busca "camiseta cazétv" ou "bolão cazétv"'],end:'destino'},
-      {icon:'🛒',label:'ML direto',steps:['acessa ML','busca "cazétv"'],end:'loja'},
-      {icon:'🍕',label:'iFood direto',steps:['acessa iFood','busca "bolão"'],end:'Bolão CazéTV'}
-     ]
-    },
-    metrics:{
-     stages:[
-      {lbl:'AUDIÊNCIA',met:'Pico de espectadores simultâneos',c:'aud'},
-      {lbl:'SESSÕES',met:'Visitas MELI + iFood via UTM/link do título',c:'ses',sub:'Origem: link live · SEO · iFood direto'},
-      {lbl:'CONVERSÃO',met:'Pedidos + Palpites',c:'conv'}
-     ],
-     kpis:['% audiência → visita ao destino','Uplift de sessões vs. baseline','Conversões atribuídas à live']
-    }
+    media:'Lives', timing:'RT', prods:['CAM','BOL'],
+    sources:[
+      {n:'Espectadores ao vivo', m:'pico simultâneo'},
+      {n:'Link no título',       m:'taps no link da live'},
+      {n:'Home MELI / iFood',    m:'sessões via banner/busca'},
+    ],
+    funnels:[F_CAM, F_BOL]
    },
    {
-    media:'TikTok Shop', produtos:['CAM'], timing:'SEM',
-    mec:'Vitrine de produtos integrada ao TikTok. Produto tagueado diretamente no vídeo com botão de compra.',
-    cham:'Tag de produto no vídeo + botão "comprar" visível → clique leva para página do produto in-app',
-    tracked:{
-     label:'🔗 Via botão de compra in-app',
-     acao:'Vê o tag do produto no vídeo → toca no botão → página do produto TikTok Shop → compra',
-     destinos:['TikTok Shop (in-app — CazéTV)']
-    },
-    ambient:{
-     label:'🔊 Via memória do produto visto',
-     nota:'Viu o produto tagueado mas não comprou no TikTok — pode buscar no ML depois',
-     behaviors:[
-      {icon:'🛒',label:'ML direto',steps:['acessa ML','busca "camiseta cazétv"'],end:'Loja CazéTV'},
-      {icon:'🔍',label:'Google',steps:['busca "camiseta cazétv copa preço"'],end:'ML loja'}
-     ]
-    },
-    metrics:{
-     stages:[
-      {lbl:'IMPRESSÃO',met:'Impressões do tag de produto no vídeo',c:'exp'},
-      {lbl:'INTERESSE',met:'CTR do produto (toque no tag → página)',c:'aud'},
-      {lbl:'INTENÇÃO',met:'Add to cart rate',c:'eng'},
-      {lbl:'CONVERSÃO',met:'Pedidos realizados no TikTok Shop',c:'conv'}
-     ],
-     kpis:['CTR do produto (tag → página)','Taxa de conversão (add to cart → pedido)','ROAS — retorno sobre gasto em ads (pago)']
-    }
+    media:'TikTok Shop', timing:'SEM', prods:['CAM'],
+    sources:[
+      {n:'Impressões do produto', m:'viu o tag no vídeo'},
+      {n:'Botão "comprar"',       m:'taps no botão in-app'},
+    ],
+    funnels:[F_TIKSHOP]
    }
   ]
  },
@@ -638,60 +389,24 @@ const data = [
   name:'Twitter / X', icon:'✕', color:'#14171A', bg:'#F7F9FA',
   channels:[
    {
-    media:'Tweets', produtos:['CAM','BOL'], timing:'ID',
-    mec:'Tweet com arte e link. Aparece no feed cronológico e pode viralizar via RT em dias de jogo do Brasil.',
-    cham:'Arte + texto com CTA + link direto para ML ou iFood',
-    tracked:{
-     label:'🔗 Via link no tweet',
-     acao:'Vê o tweet no feed → clica no link',
-     destinos:['ML — Loja CazéTV','iFood — Bolão CazéTV']
-    },
-    ambient:{
-     label:'🔊 Via scroll / trending',
-     nota:'Viu o tweet no scroll rápido, não clicou, mas lembrou da marca — típico em dias de jogo com volume alto',
-     behaviors:[
-      {icon:'🔍',label:'Google',steps:['busca "cazétv copa camiseta"'],end:'ML loja'},
-      {icon:'🛒',label:'ML direto',steps:['acessa ML','busca "cazétv"'],end:'loja'},
-      {icon:'🍕',label:'iFood direto',steps:['acessa iFood','busca "bolão"'],end:'Bolão CazéTV'}
-     ]
-    },
-    metrics:{
-     stages:[
-      {lbl:'EXPOSIÇÃO',met:'Impressões do tweet',c:'exp'},
-      {lbl:'ENGAJAMENTO',met:'Taxa de engajamento (likes + RT + replies / impressões)',c:'eng'},
-      {lbl:'SESSÕES',met:'Cliques no link → Visitas MELI + iFood',c:'ses',sub:'Origem: link tweet · SEO · direto'},
-      {lbl:'CONVERSÃO',met:'Pedidos + Palpites',c:'conv'}
-     ],
-     kpis:['CTR do link (cliques / impressões)','Taxa de engajamento (em dias de jogo tende a 3–5×)','Sessões ML/iFood atribuídas ao tweet']
-    }
+    media:'Tweets', timing:'ID', prods:['CAM','BOL'],
+    sources:[
+      {n:'Impressões do tweet',  m:'visualizações no feed'},
+      {n:'Link no tweet',        m:'cliques no link'},
+      {n:'SEO / Google',         m:'buscas após ver o tweet'},
+    ],
+    funnels:[F_CAM, F_BOL]
    },
    {
-    media:'Enquetes', produtos:['CAM','BOL'], timing:'ENC',
-    mec:'Enquete de votação. Alta interação. Não tem link direto — funciona como aquecimento de audiência.',
-    cham:'Pergunta relacionada à Copa + opções → gera curiosidade, engajamento e exposição à marca CazéTV',
-    tracked:{
-     label:'🔗 Sem path rastreável direto',
-     acao:'Não há link. A enquete não direciona para nenhuma URL — objetivo é engajamento e alcance.',
-     destinos:['Awareness (sem conversão direta)']
-    },
-    ambient:{
-     label:'🔊 100% Ambient — via engajamento com a marca',
-     nota:'Votou, comentou ou retweetou — ficou exposto à marca CazéTV. Conversão acontece por outro caminho.',
-     behaviors:[
-      {icon:'🔍',label:'Google',steps:['busca "cazétv copa"'],end:'destino'},
-      {icon:'🛒',label:'ML direto',steps:['acessa ML','busca "cazétv"'],end:'loja'},
-      {icon:'👤',label:'Segue o perfil',steps:['clica em @CazéTV','visita o perfil'],end:'links do perfil'}
-     ]
-    },
-    metrics:{
-     stages:[
-      {lbl:'EXPOSIÇÃO',met:'Impressões da enquete',c:'exp'},
-      {lbl:'PARTICIPAÇÃO',met:'Votos totais · % por opção',c:'aud'},
-      {lbl:'ENGAJAMENTO',met:'Comentários + RTs pós-enquete',c:'eng'},
-      {lbl:'INTENÇÃO',met:'Novos seguidores pós-enquete (proxy)',c:'ses'}
-     ],
-     kpis:['Taxa de participação (votos / impressões)','Volume de comentários pós-resultado','Novos seguidores pós-enquete']
-    }
+    media:'Enquetes', timing:'ENC', prods:['CAM','BOL'],
+    sources:[
+      {n:'Impressões da enquete', m:'visualizações no feed'},
+      {n:'Votos',                 m:'participação (votos/impr.)'},
+      {n:'Seguiu o perfil',       m:'novos seguidores pós-enquete'},
+    ],
+    funnels:[
+      {...F_CAM, dest:'Perfil CazéTV → Loja', destSub:'awareness → ação futura'},
+    ]
    }
   ]
  },
@@ -699,32 +414,13 @@ const data = [
   name:'WhatsApp', icon:'◎', color:'#1AAB5E', bg:'#F0FFF4',
   channels:[
    {
-    media:'Comunidade', produtos:['CAM','BOL'], timing:'ID',
-    mec:'Canal de broadcast unidirecional. Apenas CazéTV envia mensagens. Membros não respondem — audiência opt-in quente.',
-    cham:'Mensagem com arte + texto + link de compra (ML) ou link do palpite (iFood)',
-    tracked:{
-     label:'🔗 Via link na mensagem',
-     acao:'Recebe notificação no WhatsApp → abre a mensagem → clica no link diretamente',
-     destinos:['ML — Loja CazéTV','iFood — Bolão CazéTV']
-    },
-    ambient:{
-     label:'🔊 Via mensagem recebida (não clicou)',
-     nota:'Abriu a mensagem, viu arte e CTA, mas não clicou. Ou compartilhou com alguém que vai buscar.',
-     behaviors:[
-      {icon:'🔍',label:'Google',steps:['busca "cazétv copa"'],end:'destino'},
-      {icon:'🛒',label:'ML direto',steps:['acessa ML','busca "cazétv"'],end:'loja'},
-      {icon:'👥',label:'Compartilha',steps:['encaminha no WhatsApp','amigo recebe'],end:'amigo clica no link'}
-     ]
-    },
-    metrics:{
-     stages:[
-      {lbl:'MEMBROS',met:'Total de membros da comunidade',c:'exp'},
-      {lbl:'ABERTURA',met:'Taxa de abertura da mensagem (%)',c:'aud'},
-      {lbl:'AÇÃO',met:'Cliques no link (CTR) / mensagens abertas',c:'eng'},
-      {lbl:'SESSÕES',met:'Visitas MELI + iFood via UTM',c:'ses'}
-     ],
-     kpis:['Taxa de abertura por disparo','CTR do link (cliques / aberturas)','Sessões MELI/iFood por disparo']
-    }
+    media:'Comunidade', timing:'ID', prods:['CAM','BOL'],
+    sources:[
+      {n:'Membros da comunidade', m:'total opt-in'},
+      {n:'Taxa de abertura',      m:'mensagens abertas (%)'},
+      {n:'Cliques no link',       m:'taps no link da mensagem'},
+    ],
+    funnels:[F_CAM, F_BOL]
    }
   ]
  },
@@ -732,93 +428,91 @@ const data = [
   name:'Threads', icon:'@', color:'#000000', bg:'#F3F3F3',
   channels:[
    {
-    media:'Posts', produtos:['CAM','BOL'], timing:'D3',
-    mec:'Post textual ou com imagem. Feed cronológico + sugestões algorítmicas. Integrado ao universo Instagram.',
-    cham:'Arte + texto com CTA + "link na bio do Instagram" (Threads não tem link clicável no post)',
-    tracked:{
-     label:'🔗 Via link na bio do Instagram',
-     acao:'Vê o post → toca no perfil → vai ao perfil do Instagram CazéTV → clica no link da bio',
-     destinos:['ML — Loja CazéTV (via bio IG)','iFood — Bolão CazéTV (via bio IG)']
-    },
-    ambient:{
-     label:'🔊 Via texto / memória visual',
-     nota:'Leu o post mas não foi ao perfil — guardou o nome da marca, busca depois',
-     behaviors:[
-      {icon:'🔍',label:'Google',steps:['busca "cazétv copa"'],end:'destino'},
-      {icon:'🛒',label:'ML direto',steps:['acessa ML','busca "cazétv"'],end:'loja'},
-      {icon:'🍕',label:'iFood direto',steps:['acessa iFood','busca "bolão"'],end:'Bolão CazéTV'}
-     ]
-    },
-    metrics:{
-     stages:[
-      {lbl:'EXPOSIÇÃO',met:'Visualizações do post',c:'exp'},
-      {lbl:'ENGAJAMENTO',met:'Likes + Respostas + Reposts / Visualizações',c:'eng'},
-      {lbl:'INTENÇÃO',met:'Visitas ao perfil IG (via Threads)',c:'ses'},
-      {lbl:'SESSÕES',met:'Cliques no link da bio IG → MELI/iFood',c:'conv'}
-     ],
-     kpis:['Taxa de engajamento (Threads é texto-first — 2%+ é bom)','Visitas ao perfil IG geradas pelo post','Sessões ML/iFood atribuídas']
-    }
+    media:'Posts', timing:'D3', prods:['CAM','BOL'],
+    sources:[
+      {n:'Visualizações do post', m:'total no feed'},
+      {n:'Visitas ao perfil IG',  m:'toque no perfil → link da bio'},
+      {n:'SEO / Google',          m:'buscas após ver o post'},
+    ],
+    funnels:[F_CAM, F_BOL]
    }
   ]
  }
 ];
 
-function renderBeh(b) {
-  const steps = b.steps.map(s=>`<span class="beh-step">${s}</span><span class="beh-arr">→</span>`).join('');
-  return `<div class="behavior"><span class="beh-icon">${b.icon} ${b.label}</span><span class="beh-arr">→</span>${steps}<span class="beh-end">${b.end}</span></div>`;
+// ── Render ──────────────────────────────────────────────
+function renderFunnelLine(f) {
+  const dest = `
+    <div class="dest-node" style="--dc:${f.destColor};--db:${f.destBg}">
+      <span class="dest-name">${f.dest}</span>
+      <span class="dest-sub">${f.destSub}</span>
+    </div>`;
+
+  let chain = '';
+  f.stages.forEach((s, i) => {
+    const taxa = f.taxas[i] || '';
+    chain += `
+      <div class="stage-conn">
+        <div class="conn-line-wrap"><div class="conn-dash"></div><div class="conn-head">›</div></div>
+        <div class="conn-taxa">${taxa}</div>
+      </div>
+      <div class="stage-node">
+        <span class="stage-label">${s.l}</span>
+        <span class="stage-metric">${s.m}</span>
+      </div>`;
+  });
+
+  // Final connector to result
+  chain += `
+    <div class="stage-conn">
+      <div class="conn-line-wrap"><div class="conn-dash"></div><div class="conn-head">›</div></div>
+      <div class="conn-taxa">${f.taxas[f.taxas.length-1] || ''}</div>
+    </div>
+    <div class="result-node">
+      <span class="stage-label">${f.result.l}</span>
+      <span class="stage-metric">${f.result.m}</span>
+    </div>`;
+
+  return `<div class="funnel-line">${dest}${chain}</div>`;
 }
 
 function renderChannel(ch, plat) {
-  const [tl,tc] = TM[ch.timing];
-  const destHtml = ch.tracked.destinos.map(d=>`<span class="dest-chip">${d}</span>`).join('');
-  const behHtml  = ch.ambient.behaviors.map(renderBeh).join('');
+  const [tl, tc] = TM[ch.timing];
 
-  // Stages
-  const stageHtml = ch.metrics.stages.map((s,i)=>{
-    const color = SC[s.c];
-    const sub = s.sub ? `<div class="stage-sub">${s.sub}</div>` : '';
-    const arr  = i < ch.metrics.stages.length-1 ? `<span class="stage-arr">→</span>` : '';
-    return `<div class="stage-item" style="--sc:${color}"><div class="stage-lbl">${s.lbl}</div><div class="stage-met">${s.met}</div>${sub}</div>${arr}`;
-  }).join('');
+  const sourcesHtml = ch.sources.map(s => `
+    <div class="src-item">
+      <div class="src-node">
+        <span class="src-name">${s.n}</span>
+        <span class="src-metric">${s.m}</span>
+      </div>
+    </div>`).join('');
 
-  // KPIs
-  const kpiHtml = ch.metrics.kpis.map(k=>`<span class="kpi-chip">${k}</span>`).join('');
+  const funnelsHtml = ch.funnels.map(renderFunnelLine).join('');
 
-  return `<div class="channel-block" style="--pc:${plat.color};--pb:${plat.bg}">
+  return `
+<div class="channel-block" style="--pc:${plat.color};--pb:${plat.bg}">
   <div class="channel-head">
-    <span class="channel-title">${ch.media}</span>
-    <div class="badges">${ch.produtos.map(p=>`<span class="badge b-${p.toLowerCase()}">${p}</span>`).join('')}<span class="badge ${tc}">${tl}</span></div>
-  </div>
-  <div class="channel-top">
-    <div class="top-node n-mec"><div class="top-label">Como funciona</div><div class="top-text">${ch.mec}</div></div>
-    <div class="top-arrow">→</div>
-    <div class="top-node n-cham"><div class="top-label">A Chamada</div><div class="top-text">${ch.cham}</div></div>
-  </div>
-  <div class="bifurcation"><div class="bif-line"></div><div class="bif-label">↓ bifurcação de comportamento do usuário</div><div class="bif-line"></div></div>
-  <div class="channel-paths">
-    <div class="path-tracked">
-      <div class="path-title">${ch.tracked.label}</div>
-      <div class="p-section-label">Ação</div><div class="p-acao">${ch.tracked.acao}</div>
-      <div class="p-section-label">Destino</div><div>${destHtml}</div>
-    </div>
-    <div class="path-ambient">
-      <div class="path-title">${ch.ambient.label}</div>
-      <div class="amb-note">${ch.ambient.nota}</div>
-      <div class="p-section-label">Comportamentos possíveis</div>${behHtml}
+    <span class="ch-title">${ch.media}</span>
+    <div class="badges">
+      ${ch.prods.map(p=>`<span class="badge b-${p.toLowerCase()}">${p}</span>`).join('')}
+      <span class="badge ${tc}">${tl}</span>
     </div>
   </div>
-  <div class="channel-metrics">
-    <div class="metrics-header">Métricas da chamada — funil por etapa</div>
-    <div class="stages-flow">${stageHtml}</div>
-    <div class="kpis-row"><span class="kpis-lbl">KPIs finais ↓</span>${kpiHtml}</div>
+  <div class="funnel-view">
+    <div class="sources-col">${sourcesHtml}</div>
+    <div class="trunk-conn">
+      <div class="trunk-line"></div>
+      <div class="trunk-arrow">›</div>
+    </div>
+    <div class="funnels-col">${funnelsHtml}</div>
   </div>
 </div>`;
 }
 
-document.getElementById('app').innerHTML = data.map(plat=>`
+document.getElementById('app').innerHTML = platforms.map(plat => `
 <div class="platform">
   <div class="platform-header" style="background:${plat.color}">${plat.icon} ${plat.name}</div>
-  ${plat.channels.map(ch=>renderChannel(ch,plat)).join('')}
+  ${plat.channels.map(ch => renderChannel(ch, plat)).join('')}
 </div>`).join('');
 </script>
 </body>
