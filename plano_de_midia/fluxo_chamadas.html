@@ -8,23 +8,15 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #F1F5F9; color: #1E293B;
-  padding: 28px 24px; font-size: 13px;
+  background: #F1F5F9; color: #1E293B; padding: 24px; font-size: 13px;
 }
 
-/* ── Header ─────────────────────────── */
-.page-header { margin-bottom: 28px; }
-h1 { font-size: 20px; font-weight: 700; color: #0F172A; margin-bottom: 6px; }
-.subtitle { font-size: 13px; color: #64748B; line-height: 1.5; max-width: 760px; }
+/* ── Page header ─────────────────────── */
+h1 { font-size: 20px; font-weight: 700; color: #0F172A; margin-bottom: 5px; }
+.subtitle { font-size: 13px; color: #64748B; line-height: 1.5; max-width: 780px; margin-bottom: 20px; }
 
-/* ── Legend ──────────────────────────── */
-.legend {
-  display: flex; flex-wrap: wrap; align-items: center;
-  gap: 8px 20px; margin-top: 14px; padding: 10px 16px;
-  background: white; border-radius: 8px; border: 1px solid #E2E8F0;
-  font-size: 12px; color: #475569;
-}
-.badge { padding: 1px 5px; border-radius: 3px; font-size: 9px; font-weight: 700; }
+/* ── Badges ──────────────────────────── */
+.badge { padding: 1px 6px; border-radius: 3px; font-size: 9px; font-weight: 700; }
 .b-cam { background:#DBEAFE; color:#1D4ED8; }
 .b-bol { background:#FEF3C7; color:#B45309; }
 .b-rt  { background:#DCFCE7; color:#15803D; }
@@ -34,8 +26,8 @@ h1 { font-size: 20px; font-weight: 700; color: #0F172A; margin-bottom: 6px; }
 .b-sem { background:#F1F5F9; color:#475569; }
 .b-enc { background:#F1F5F9; color:#475569; }
 
-/* ── Platform ────────────────────────── */
-.platform { margin-bottom: 28px; }
+/* ── Platform group ──────────────────── */
+.platform { margin-bottom: 32px; }
 .platform-header {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 5px 13px; border-radius: 6px; margin-bottom: 10px;
@@ -45,7 +37,7 @@ h1 { font-size: 20px; font-weight: 700; color: #0F172A; margin-bottom: 6px; }
 /* ── Channel block ───────────────────── */
 .channel-block {
   background: white; border-radius: 10px;
-  border: 1px solid #E2E8F0; margin-bottom: 8px; overflow: hidden;
+  border: 1px solid #E2E8F0; margin-bottom: 10px; overflow: hidden;
 }
 .channel-head {
   display: flex; align-items: center; gap: 8px;
@@ -55,131 +47,85 @@ h1 { font-size: 20px; font-weight: 700; color: #0F172A; margin-bottom: 6px; }
 .ch-title { font-weight: 700; font-size: 14px; color: var(--pc); }
 .badges   { display: flex; gap: 3px; }
 
-/* ── Funnel view ─────────────────────── */
-.funnel-view {
-  display: flex; align-items: flex-start;
-  padding: 14px 14px 14px 14px; gap: 0; overflow-x: auto;
+/* ── Table container ─────────────────── */
+.tables-wrap { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 10px; }
+.table-section { overflow-x: auto; }
+
+/* Product label above table */
+.prod-label {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .4px;
+  padding: 2px 8px; border-radius: 4px; margin-bottom: 5px;
+}
+.prod-cam { background: #DBEAFE; color: #1D4ED8; }
+.prod-bol { background: #FEF3C7; color: #B45309; }
+
+/* ── Funnel table ────────────────────── */
+.funnel-table {
+  border-collapse: collapse; width: max-content;
+  font-size: 11px;
 }
 
-/* ── Sources column ──────────────────── */
-.sources-col {
-  display: flex; flex-direction: column;
-  gap: 4px; flex-shrink: 0;
-  /* Right border = trunk of the tree */
-  border-right: 2px solid #CBD5E1;
-  padding-right: 0; margin-right: 0;
+/* Header row */
+.funnel-table thead tr {
+  background: #F8FAFC;
 }
-.src-item {
-  display: flex; align-items: center;
-  position: relative;
+.funnel-table th {
+  padding: 6px 10px; border: 1px solid #E2E8F0;
+  font-weight: 600; white-space: nowrap; text-align: center;
+  font-size: 11px;
 }
-/* Horizontal branch line to trunk */
-.src-item::after {
-  content: '';
-  position: absolute; right: -8px; top: 50%;
-  width: 8px; height: 2px; background: #CBD5E1;
+.th-var {
+  background: var(--pc, #64748B); color: white;
+  min-width: 100px; text-align: left; padding-left: 12px;
 }
-.src-node {
-  background: white; border: 1px solid #E2E8F0;
-  border-left: 3px solid #94A3B8;
-  border-radius: 6px; padding: 5px 9px;
-  min-width: 165px; max-width: 165px;
+.th-source {
+  background: #F1F5F9; color: #475569; min-width: 100px;
 }
-.src-name   { font-size: 11px; font-weight: 600; color: #334155; display: block; }
-.src-metric { font-size: 10px; color: #64748B; font-style: italic; display: block; margin-top: 1px; }
+.th-dest-cam {
+  background: #EFF6FF; color: #1D4ED8;
+  border-bottom: 3px solid #1D4ED8 !important;
+  min-width: 100px;
+}
+.th-dest-bol {
+  background: #FFFBEB; color: #B45309;
+  border-bottom: 3px solid #B45309 !important;
+  min-width: 100px;
+}
+.th-stage { background: #F8FAFC; color: #334155; min-width: 90px; }
+.th-result { background: #ECFDF5; color: #065F46; min-width: 90px; }
 
-/* ── Trunk connector to destinations ─── */
-.trunk-conn {
-  display: flex; align-items: center;
-  flex-shrink: 0; align-self: center;
+/* Body rows */
+.funnel-table tbody tr { border-bottom: 1px solid #F1F5F9; }
+.funnel-table tbody tr:hover { background: #FAFBFC; }
+.funnel-table td {
+  padding: 6px 10px; border: 1px solid #E2E8F0;
+  height: 32px; min-width: 90px;
 }
-.trunk-line {
-  width: 20px; height: 2px; background: #CBD5E1;
-}
-.trunk-arrow {
-  color: #94A3B8; font-size: 14px; margin-left: -2px;
-}
-
-/* ── Funnels column ──────────────────── */
-.funnels-col {
-  display: flex; flex-direction: column;
-  gap: 6px; flex-shrink: 0;
+.td-var {
+  font-weight: 500; color: #475569; white-space: nowrap;
+  background: #FAFAFA; padding-left: 12px; min-width: 100px;
 }
 
-/* ── Single funnel row ───────────────── */
-.funnel-line {
-  display: flex; align-items: center; gap: 0; flex-shrink: 0;
+/* Footer row (metrics) */
+.funnel-table tfoot tr { background: #FFF; }
+.funnel-table tfoot td {
+  padding: 5px 8px; border: 1px solid #E2E8F0;
+  text-align: center; vertical-align: top;
 }
-
-/* ── Destination node ────────────────── */
-.dest-node {
-  min-width: 130px; max-width: 130px;
-  border-radius: 7px; padding: 6px 10px;
-  border: 1.5px solid var(--dc);
-  background: var(--db);
-  flex-shrink: 0;
+.metric-raw {
+  font-size: 10px; color: #64748B; display: block; margin-bottom: 2px;
 }
-.dest-name { font-size: 11px; font-weight: 700; color: var(--dc); display: block; line-height: 1.3; }
-.dest-sub  { font-size: 9px; color: var(--dc); opacity: .7; display: block; margin-top: 1px; }
-
-/* ── Stage connector (arrow + taxa) ──── */
-.stage-conn {
-  display: flex; flex-direction: column;
-  align-items: center; flex-shrink: 0;
-  width: 56px;
+.metric-rate {
+  font-size: 9px; color: #DC2626; font-style: italic; display: block;
 }
-.conn-line-wrap {
-  display: flex; align-items: center; width: 100%;
-}
-.conn-dash { flex: 1; height: 1.5px; background: #CBD5E1; }
-.conn-head { color: #94A3B8; font-size: 12px; margin-left: -3px; }
-.conn-taxa {
-  font-size: 9px; color: #94A3B8; font-style: italic;
-  text-align: center; margin-top: 1px; line-height: 1.2; white-space: nowrap;
-}
-
-/* ── Stage node ──────────────────────── */
-.stage-node {
-  background: white; border: 1px solid #E2E8F0;
-  border-radius: 7px; padding: 6px 9px;
-  min-width: 90px; max-width: 90px; flex-shrink: 0;
-}
-.stage-label  { font-size: 11px; font-weight: 600; color: #1E293B; display: block; }
-.stage-metric { font-size: 9px; color: #64748B; font-style: italic; display: block; margin-top: 1px; }
-
-/* ── Result node ─────────────────────── */
-.result-node {
-  background: #F8FAFC; border: 2px solid #94A3B8;
-  border-radius: 7px; padding: 6px 9px;
-  min-width: 90px; max-width: 90px; flex-shrink: 0;
-}
-.result-node .stage-label  { color: #0F172A; font-size: 12px; }
-.result-node .stage-metric { color: #475569; }
-
-/* ── Responsive ──────────────────────── */
-@media (max-width: 900px) {
-  .funnel-view { flex-direction: column; gap: 10px; }
-  .sources-col { border-right: none; border-bottom: 2px solid #CBD5E1; padding-bottom: 8px; }
-  .src-item::after { display: none; }
-  .trunk-conn { transform: rotate(90deg); margin: 4px auto; }
-}
+.td-var-footer { background: #FAFAFA; }
 </style>
 </head>
 <body>
 
-<div class="page-header">
-  <h1>Fluxo de Chamadas por Origem / Mídia — CazéTV Copa 2026</h1>
-  <p class="subtitle">Cada canal mostra as origens de entrada com suas métricas, convergindo para o destino (Loja MELI ou Bolão iFood), seguido do funil com taxa de conversão entre cada etapa. <strong>CAM</strong> = Camiseteria · <strong>BOL</strong> = Bolão.</p>
-  <div class="legend">
-    <span>Timing: </span>
-    <span class="badge b-rt">RT</span> Real-time &nbsp;
-    <span class="badge b-id">ID</span> Intraday &nbsp;
-    <span class="badge b-d1">D+1</span> &nbsp;
-    <span class="badge b-d3">D+3/7</span> &nbsp;
-    <span class="badge b-sem">SEM</span> Semanal &nbsp;
-    <span class="badge b-enc">ENC</span> Ao encerrar
-  </div>
-</div>
+<h1>Fluxo de Chamadas por Origem / Mídia — CazéTV Copa 2026</h1>
+<p class="subtitle">Cada linha = uma variação da chamada (locução, post, story, tweet…). Cada coluna = estágio do funil. Rodapé = métrica bruta do estágio <em style="color:#DC2626">+ taxa de conversão para o próximo estágio</em>. Objetivo: comparar quais variações de chamada performam melhor em cada canal.</p>
 
 <div id="app"></div>
 
@@ -189,91 +135,82 @@ const TM = {
   D3:['D+3/7','b-d3'], SEM:['SEM','b-sem'], ENC:['ENC','b-enc']
 };
 
-// Standard funnels
-const F_CAM = {
-  dest:'Loja CazéTV', destSub:'Mercado Livre',
-  destColor:'#1D4ED8', destBg:'#EFF6FF',
-  stages:[
-    {l:'Produto',     m:'visualizações da página'},
-    {l:'Carrinho',    m:'add to cart'},
-    {l:'Pedido',      m:'conversões'},
-  ],
-  taxas:['% pg → cart','% cart → pedido'],
-  result:{l:'Receita', m:'R$ atribuído'}
-};
-const F_BOL = {
-  dest:'Bolão CazéTV', destSub:'iFood · LiveLike',
-  destColor:'#B45309', destBg:'#FFFBEB',
-  stages:[
-    {l:'Cadastro', m:'novos registros'},
-    {l:'Palpite',  m:'1º palpite feito'},
-  ],
-  taxas:['% cad → palpite'],
-  result:{l:'Retenção', m:'retorno no próx. jogo'}
-};
-const F_TIKSHOP = {
-  dest:'TikTok Shop', destSub:'compra in-app',
-  destColor:'#000', destBg:'#F5F5F5',
-  stages:[
-    {l:'Produto', m:'impressões do produto'},
-    {l:'Carrinho',m:'add to cart'},
-    {l:'Pedido',  m:'conversão in-app'},
-  ],
-  taxas:['% imp → cart','% cart → pedido'],
-  result:{l:'Receita', m:'R$ in-app'}
-};
+// ── Standard funnel stages ──────────────────────────────
+const F_CAM = [
+  { id:'dest',    name:'Loja CazéTV',  cls:'th-dest-cam', raw:'Visitas totais',      rate:'Views Produto / Visitas' },
+  { id:'produto', name:'Produto',      cls:'th-stage',    raw:'Views Produto',       rate:'Views Carrinho / Views Produto' },
+  { id:'cart',    name:'Carrinho',     cls:'th-stage',    raw:'Views Carrinho',      rate:'Pedidos / Views Carrinho' },
+  { id:'pedidos', name:'Pedidos',      cls:'th-stage',    raw:'Qtd Pedidos',         rate:'Ticket Médio' },
+  { id:'receita', name:'Receita',      cls:'th-result',   raw:'R$ Total',            rate:null },
+];
+const F_BOL = [
+  { id:'dest',    name:'Bolão iFood',  cls:'th-dest-bol', raw:'Visitas totais',      rate:'Cadastros / Visitas' },
+  { id:'cad',     name:'Cadastro',     cls:'th-stage',    raw:'Novos cadastros',     rate:'Palpites / Cadastros' },
+  { id:'pal',     name:'Palpite',      cls:'th-stage',    raw:'Palpites feitos',     rate:'Retorno / Palpites' },
+  { id:'ret',     name:'Retenção',     cls:'th-result',   raw:'Retorno próx. jogo',  rate:null },
+];
+const F_TIKSHOP = [
+  { id:'dest',    name:'TikTok Shop',  cls:'th-dest-cam', raw:'Impressões produto',  rate:'CTR produto' },
+  { id:'produto', name:'Produto',      cls:'th-stage',    raw:'Views página produto', rate:'Add to cart / Views' },
+  { id:'cart',    name:'Carrinho',     cls:'th-stage',    raw:'Add to cart',         rate:'Pedidos / Add to cart' },
+  { id:'pedidos', name:'Pedido',       cls:'th-stage',    raw:'Qtd Pedidos',         rate:'ROAS (pago)' },
+  { id:'receita', name:'Receita',      cls:'th-result',   raw:'R$ in-app',           rate:null },
+];
 
+// ── Channel definitions ─────────────────────────────────
 const platforms = [
  {
   name:'YouTube', icon:'▶', color:'#CC0000', bg:'#FFF5F5',
   channels:[
    {
     media:'Lives', timing:'RT', prods:['CAM','BOL'],
+    varLabel:'Locução',
+    variations:['Locução 1','Locução 2','Locução 3','Locução 4','Locução 5'],
     sources:[
-      {n:'Audiência ao vivo',       m:'espectadores simultâneos'},
-      {n:'QR Code / link no chat',  m:'scans + cliques (UTM)'},
-      {n:'Home MELI / iFood',       m:'sessões via banner'},
-      {n:'SEO / Google',            m:'buscas "cazétv copa"'},
-      {n:'AI (ChatGPT, Claude)',     m:'cliques em link sugerido'},
+      { name:'Audiência',        cls:'th-source', raw:'Esp. ao vivo (simultâneos)',  rate:'Visitas / Audiência' },
+      { name:'MELI / Banner',    cls:'th-source', raw:'Visitas via Banner · SEO · AI', rate:'% CTR → Loja' },
     ],
-    funnels:[F_CAM, F_BOL]
+    funnels:{ CAM: F_CAM, BOL: F_BOL }
    },
    {
     media:'Vídeos', timing:'D1', prods:['CAM','BOL'],
+    varLabel:'Thumb/Título',
+    variations:['Thumb/Título 1','Thumb/Título 2','Thumb/Título 3','Thumb/Título 4'],
     sources:[
-      {n:'Impressões (thumbnail)', m:'impressões no feed/busca'},
-      {n:'Link no vídeo / desc.',  m:'cliques no card ou link'},
-      {n:'SEO / Google',           m:'buscas "cazétv copa"'},
-      {n:'AI (ChatGPT, Claude)',   m:'cliques em link sugerido'},
+      { name:'Impressões',          cls:'th-source', raw:'Impressões no feed/busca',   rate:'CTR (cliques / impr.)' },
+      { name:'Cliques · SEO · AI',  cls:'th-source', raw:'Visitas origens diversas',   rate:'% → Loja' },
     ],
-    funnels:[F_CAM, F_BOL]
+    funnels:{ CAM: F_CAM, BOL: F_BOL }
    },
    {
     media:'Shorts', timing:'D1', prods:['CAM','BOL'],
+    varLabel:'Short',
+    variations:['Short 1','Short 2','Short 3'],
     sources:[
-      {n:'Impressões (aba Shorts)', m:'impressões no feed Shorts'},
-      {n:'Link na descrição',       m:'cliques (após parar o swipe)'},
-      {n:'Pinned comment',          m:'cliques no comentário fixado'},
-      {n:'SEO / Google',            m:'buscas após ver o Short'},
+      { name:'Impressões (Shorts)',  cls:'th-source', raw:'Impressões na aba',         rate:'CTR (cliques / impr.)' },
+      { name:'Link / Pinned comment',cls:'th-source', raw:'Cliques no link',           rate:'% → Loja' },
     ],
-    funnels:[F_CAM, F_BOL]
+    funnels:{ CAM: F_CAM, BOL: F_BOL }
    },
    {
     media:'Playlists', timing:'SEM', prods:['CAM','BOL'],
+    varLabel:'Playlist',
+    variations:['Playlist Copa 2026','Playlist Melhores Momentos'],
     sources:[
-      {n:'Playlist starts',      m:'inícios da playlist'},
-      {n:'Link na descrição',    m:'cliques no link da playlist'},
-      {n:'Card / end screen',    m:'cliques nos cards dos vídeos'},
+      { name:'Playlist Starts',     cls:'th-source', raw:'Inícios da playlist',       rate:'Avg vídeos / start' },
+      { name:'Link / Card',         cls:'th-source', raw:'Cliques no link/card',       rate:'% → Loja' },
     ],
-    funnels:[F_CAM, F_BOL]
+    funnels:{ CAM: F_CAM, BOL: F_BOL }
    },
    {
     media:'Posts do canal', timing:'D1', prods:['CAM','BOL'],
+    varLabel:'Post',
+    variations:['Post 1','Post 2','Post 3'],
     sources:[
-      {n:'Impressões do post',  m:'notificações abertas + feed'},
-      {n:'Link no post',        m:'cliques no link do post'},
+      { name:'Impressões',          cls:'th-source', raw:'Notificações + feed',        rate:'Taxa engajamento' },
+      { name:'Cliques no link',     cls:'th-source', raw:'Cliques no link do post',    rate:'% → Loja' },
     ],
-    funnels:[F_CAM, F_BOL]
+    funnels:{ CAM: F_CAM, BOL: F_BOL }
    }
   ]
  },
@@ -282,58 +219,66 @@ const platforms = [
   channels:[
    {
     media:'Stories', timing:'ID', prods:['CAM','BOL'],
+    varLabel:'Story',
+    variations:['Story 1','Story 2','Story 3','Story 4','Story 5'],
     sources:[
-      {n:'Alcance do story',    m:'usuários que viram'},
-      {n:'Sticker de link',     m:'taps no sticker'},
-      {n:'SEO pós-story',       m:'buscas após ver o story'},
+      { name:'Alcance',             cls:'th-source', raw:'Usuários que viram',         rate:'Cliques / Alcance' },
+      { name:'Sticker de link',     cls:'th-source', raw:'Taps no sticker',            rate:'% → Loja' },
     ],
-    funnels:[F_CAM, F_BOL]
+    funnels:{ CAM: F_CAM, BOL: F_BOL }
    },
    {
     media:'Reels', timing:'D3', prods:['CAM','BOL'],
+    varLabel:'Reel',
+    variations:['Reel 1','Reel 2','Reel 3','Reel 4'],
     sources:[
-      {n:'Plays',                m:'reproduções totais'},
-      {n:'Visitas ao perfil',    m:'toque no perfil pós-reel'},
-      {n:'Link na bio',          m:'cliques no link da bio'},
-      {n:'SEO / Google',         m:'buscas após ver o reel'},
+      { name:'Plays',               cls:'th-source', raw:'Reproduções totais',         rate:'Visitas perfil / Plays' },
+      { name:'Visitas ao perfil',   cls:'th-source', raw:'Toque no perfil pós-reel',   rate:'Cliques bio / Visitas' },
+      { name:'Link na bio',         cls:'th-source', raw:'Cliques no link da bio',     rate:'% → Loja' },
     ],
-    funnels:[F_CAM, F_BOL]
+    funnels:{ CAM: F_CAM, BOL: F_BOL }
    },
    {
     media:'Posts (feed)', timing:'D3', prods:['CAM','BOL'],
+    varLabel:'Post',
+    variations:['Post 1','Post 2','Post 3','Post 4'],
     sources:[
-      {n:'Alcance do post',      m:'usuários únicos que viram'},
-      {n:'Visitas ao perfil',    m:'toque no perfil pós-post'},
-      {n:'Link na bio',          m:'cliques no link da bio'},
-      {n:'Posts salvos',         m:'salvamentos (intenção futura)'},
+      { name:'Alcance',             cls:'th-source', raw:'Usuários únicos que viram',  rate:'Visitas perfil / Alcance' },
+      { name:'Visitas ao perfil',   cls:'th-source', raw:'Toque no perfil pós-post',   rate:'Cliques bio / Visitas' },
+      { name:'Link na bio',         cls:'th-source', raw:'Cliques no link da bio',     rate:'% → Loja' },
     ],
-    funnels:[F_CAM, F_BOL]
+    funnels:{ CAM: F_CAM, BOL: F_BOL }
    },
    {
     media:'Bio', timing:'SEM', prods:['CAM','BOL'],
+    varLabel:'Período',
+    variations:['Semana 1','Semana 2','Semana 3'],
     sources:[
-      {n:'Visitas ao perfil',    m:'todas as origens'},
-      {n:'Cliques no link',      m:'taps no link da bio'},
+      { name:'Visitas ao perfil',   cls:'th-source', raw:'Todas as origens',           rate:'Cliques bio / Visitas' },
+      { name:'Cliques no link',     cls:'th-source', raw:'Taps no link da bio',        rate:'% → Loja' },
     ],
-    funnels:[F_CAM, F_BOL]
+    funnels:{ CAM: F_CAM, BOL: F_BOL }
    },
    {
     media:'Comunidade CazéTV', timing:'SEM', prods:['CAM','BOL'],
+    varLabel:'Mensagem',
+    variations:['Mensagem 1','Mensagem 2','Mensagem 3'],
     sources:[
-      {n:'Membros ativos',      m:'total na comunidade'},
-      {n:'Taxa de abertura',    m:'mensagens abertas (%)'},
-      {n:'Cliques no link',     m:'taps no link da mensagem'},
+      { name:'Membros',             cls:'th-source', raw:'Total de membros',           rate:'Taxa de abertura' },
+      { name:'Aberturas',           cls:'th-source', raw:'Mensagens abertas',          rate:'Cliques / Aberturas' },
+      { name:'Cliques no link',     cls:'th-source', raw:'Taps no link',              rate:'% → Loja' },
     ],
-    funnels:[F_CAM, F_BOL]
+    funnels:{ CAM: F_CAM, BOL: F_BOL }
    },
    {
     media:'Comunidade Casimiro', timing:'SEM', prods:['CAM','BOL'],
+    varLabel:'Post Casimiro',
+    variations:['Post 1','Post 2','Post 3'],
     sources:[
-      {n:'Menções à CazéTV',    m:'volume (BrandWatch)'},
-      {n:'Sentimento',          m:'% pos / neu / neg'},
-      {n:'SEO / Google',        m:'buscas "cazétv casimiro"'},
+      { name:'Menções',             cls:'th-source', raw:'Volume (BrandWatch)',        rate:'Sentimento (pos/neg)' },
+      { name:'SEO / Google',        cls:'th-source', raw:'Buscas "cazétv casimiro"',  rate:'% → Loja (estimado)' },
     ],
-    funnels:[F_CAM, F_BOL]
+    funnels:{ CAM: F_CAM, BOL: F_BOL }
    }
   ]
  },
@@ -342,46 +287,52 @@ const platforms = [
   channels:[
    {
     media:'Vídeos', timing:'ID', prods:['CAM','BOL'],
+    varLabel:'Vídeo',
+    variations:['Vídeo 1','Vídeo 2','Vídeo 3','Vídeo 4'],
     sources:[
-      {n:'For You Page (FYP)',   m:'visualizações via FYP'},
-      {n:'Taxa de conclusão',    m:'% que assiste até o fim'},
-      {n:'Link na bio',          m:'cliques pós-vídeo'},
-      {n:'SEO / Google',         m:'buscas após ver o vídeo'},
+      { name:'Plays (FYP)',          cls:'th-source', raw:'Reproduções · % via FYP',   rate:'Taxa conclusão' },
+      { name:'Link na bio',          cls:'th-source', raw:'Cliques pós-vídeo',          rate:'% → Loja' },
     ],
-    funnels:[F_CAM, F_BOL]
+    funnels:{ CAM: F_CAM, BOL: F_BOL }
    },
    {
     media:'Posts', timing:'D1', prods:['CAM','BOL'],
+    varLabel:'Post',
+    variations:['Post 1','Post 2','Post 3'],
     sources:[
-      {n:'Visualizações',       m:'total + % via FYP'},
-      {n:'Link na bio',         m:'cliques pós-post'},
+      { name:'Visualizações',        cls:'th-source', raw:'Views · % via FYP',         rate:'Engajamentos / Views' },
+      { name:'Link na bio',          cls:'th-source', raw:'Cliques',                   rate:'% → Loja' },
     ],
-    funnels:[F_CAM, F_BOL]
+    funnels:{ CAM: F_CAM, BOL: F_BOL }
    },
    {
     media:'Stories', timing:'D1', prods:['CAM','BOL'],
+    varLabel:'Story',
+    variations:['Story 1','Story 2','Story 3'],
     sources:[
-      {n:'Visualizações',       m:'total de views'},
-      {n:'Sticker de link',     m:'taps no sticker'},
+      { name:'Visualizações',        cls:'th-source', raw:'Views do story',            rate:'Taxa conclusão' },
+      { name:'Sticker de link',      cls:'th-source', raw:'Taps no sticker',           rate:'% → Loja' },
     ],
-    funnels:[F_CAM, F_BOL]
+    funnels:{ CAM: F_CAM, BOL: F_BOL }
    },
    {
     media:'Lives', timing:'RT', prods:['CAM','BOL'],
+    varLabel:'Locução',
+    variations:['Locução 1','Locução 2','Locução 3'],
     sources:[
-      {n:'Espectadores ao vivo', m:'pico simultâneo'},
-      {n:'Link no título',       m:'taps no link da live'},
-      {n:'Home MELI / iFood',    m:'sessões via banner/busca'},
+      { name:'Espectadores',         cls:'th-source', raw:'Pico simultâneo',           rate:'Visitas / Espectadores' },
+      { name:'Link no título',       cls:'th-source', raw:'Taps no link',              rate:'% → Loja' },
     ],
-    funnels:[F_CAM, F_BOL]
+    funnels:{ CAM: F_CAM, BOL: F_BOL }
    },
    {
     media:'TikTok Shop', timing:'SEM', prods:['CAM'],
+    varLabel:'Produto',
+    variations:['Camiseta P','Camiseta M','Camiseta G'],
     sources:[
-      {n:'Impressões do produto', m:'viu o tag no vídeo'},
-      {n:'Botão "comprar"',       m:'taps no botão in-app'},
+      { name:'Vídeos com tag',       cls:'th-source', raw:'Impressões do tag',         rate:'Taps no produto / impr.' },
     ],
-    funnels:[F_TIKSHOP]
+    funnels:{ CAM: F_TIKSHOP }
    }
   ]
  },
@@ -390,23 +341,24 @@ const platforms = [
   channels:[
    {
     media:'Tweets', timing:'ID', prods:['CAM','BOL'],
+    varLabel:'Tweet',
+    variations:['Tweet 1','Tweet 2','Tweet 3','Tweet 4'],
     sources:[
-      {n:'Impressões do tweet',  m:'visualizações no feed'},
-      {n:'Link no tweet',        m:'cliques no link'},
-      {n:'SEO / Google',         m:'buscas após ver o tweet'},
+      { name:'Impressões',           cls:'th-source', raw:'Views no feed',             rate:'Engajamentos / Impr.' },
+      { name:'Cliques no link',      cls:'th-source', raw:'Link clicks',               rate:'% → Loja' },
     ],
-    funnels:[F_CAM, F_BOL]
+    funnels:{ CAM: F_CAM, BOL: F_BOL }
    },
    {
     media:'Enquetes', timing:'ENC', prods:['CAM','BOL'],
+    varLabel:'Enquete',
+    variations:['Enquete 1','Enquete 2','Enquete 3'],
     sources:[
-      {n:'Impressões da enquete', m:'visualizações no feed'},
-      {n:'Votos',                 m:'participação (votos/impr.)'},
-      {n:'Seguiu o perfil',       m:'novos seguidores pós-enquete'},
+      { name:'Impressões',           cls:'th-source', raw:'Views no feed',             rate:'Taxa participação' },
+      { name:'Votos',                cls:'th-source', raw:'Total de votos',            rate:'Novos seguidores' },
+      { name:'Perfil CazéTV',        cls:'th-source', raw:'Visitas ao perfil',         rate:'Cliques na bio → Loja' },
     ],
-    funnels:[
-      {...F_CAM, dest:'Perfil CazéTV → Loja', destSub:'awareness → ação futura'},
-    ]
+    funnels:{ CAM: F_CAM, BOL: F_BOL }
    }
   ]
  },
@@ -415,12 +367,14 @@ const platforms = [
   channels:[
    {
     media:'Comunidade', timing:'ID', prods:['CAM','BOL'],
+    varLabel:'Mensagem',
+    variations:['Mensagem 1','Mensagem 2','Mensagem 3','Mensagem 4'],
     sources:[
-      {n:'Membros da comunidade', m:'total opt-in'},
-      {n:'Taxa de abertura',      m:'mensagens abertas (%)'},
-      {n:'Cliques no link',       m:'taps no link da mensagem'},
+      { name:'Membros',              cls:'th-source', raw:'Total opt-in',              rate:'Taxa de abertura' },
+      { name:'Aberturas',            cls:'th-source', raw:'Mensagens abertas',         rate:'Cliques / Aberturas' },
+      { name:'Cliques no link',      cls:'th-source', raw:'Taps no link',              rate:'% → Loja' },
     ],
-    funnels:[F_CAM, F_BOL]
+    funnels:{ CAM: F_CAM, BOL: F_BOL }
    }
   ]
  },
@@ -429,65 +383,72 @@ const platforms = [
   channels:[
    {
     media:'Posts', timing:'D3', prods:['CAM','BOL'],
+    varLabel:'Post',
+    variations:['Post 1','Post 2','Post 3'],
     sources:[
-      {n:'Visualizações do post', m:'total no feed'},
-      {n:'Visitas ao perfil IG',  m:'toque no perfil → link da bio'},
-      {n:'SEO / Google',          m:'buscas após ver o post'},
+      { name:'Visualizações',        cls:'th-source', raw:'Views no feed',             rate:'Engajamentos / Views' },
+      { name:'Visitas ao perfil IG', cls:'th-source', raw:'Toque no perfil → IG',      rate:'Cliques bio / Visitas' },
+      { name:'Link na bio IG',       cls:'th-source', raw:'Cliques no link',           rate:'% → Loja' },
     ],
-    funnels:[F_CAM, F_BOL]
+    funnels:{ CAM: F_CAM, BOL: F_BOL }
    }
   ]
  }
 ];
 
 // ── Render ──────────────────────────────────────────────
-function renderFunnelLine(f) {
-  const dest = `
-    <div class="dest-node" style="--dc:${f.destColor};--db:${f.destBg}">
-      <span class="dest-name">${f.dest}</span>
-      <span class="dest-sub">${f.destSub}</span>
+function renderTable(ch, productKey, funnel, plat) {
+  const allCols = [...ch.sources, ...funnel];
+  const prodClass = productKey === 'CAM' ? 'prod-cam' : 'prod-bol';
+  const prodText  = productKey === 'CAM' ? 'Camiseteria — Mercado Livre' : 'Bolão — iFood · LiveLike';
+
+  // Header cells
+  const headerCells = allCols.map(col =>
+    `<th class="${col.cls}">${col.name}</th>`
+  ).join('');
+
+  // Body rows
+  const bodyRows = ch.variations.map(v =>
+    `<tr>
+      <td class="td-var">${v}</td>
+      ${allCols.map(() => '<td></td>').join('')}
+    </tr>`
+  ).join('');
+
+  // Footer cells
+  const footerCells = allCols.map(col =>
+    `<td>
+      <span class="metric-raw">${col.raw}</span>
+      ${col.rate ? `<span class="metric-rate">${col.rate}</span>` : ''}
+    </td>`
+  ).join('');
+
+  return `
+    <div class="table-section">
+      <span class="prod-label ${prodClass}">${prodText}</span>
+      <table class="funnel-table">
+        <thead>
+          <tr>
+            <th class="th-var" style="background:var(--pc)">${ch.varLabel}</th>
+            ${headerCells}
+          </tr>
+        </thead>
+        <tbody>${bodyRows}</tbody>
+        <tfoot>
+          <tr>
+            <td class="td-var-footer"></td>
+            ${footerCells}
+          </tr>
+        </tfoot>
+      </table>
     </div>`;
-
-  let chain = '';
-  f.stages.forEach((s, i) => {
-    const taxa = f.taxas[i] || '';
-    chain += `
-      <div class="stage-conn">
-        <div class="conn-line-wrap"><div class="conn-dash"></div><div class="conn-head">›</div></div>
-        <div class="conn-taxa">${taxa}</div>
-      </div>
-      <div class="stage-node">
-        <span class="stage-label">${s.l}</span>
-        <span class="stage-metric">${s.m}</span>
-      </div>`;
-  });
-
-  // Final connector to result
-  chain += `
-    <div class="stage-conn">
-      <div class="conn-line-wrap"><div class="conn-dash"></div><div class="conn-head">›</div></div>
-      <div class="conn-taxa">${f.taxas[f.taxas.length-1] || ''}</div>
-    </div>
-    <div class="result-node">
-      <span class="stage-label">${f.result.l}</span>
-      <span class="stage-metric">${f.result.m}</span>
-    </div>`;
-
-  return `<div class="funnel-line">${dest}${chain}</div>`;
 }
 
 function renderChannel(ch, plat) {
   const [tl, tc] = TM[ch.timing];
-
-  const sourcesHtml = ch.sources.map(s => `
-    <div class="src-item">
-      <div class="src-node">
-        <span class="src-name">${s.n}</span>
-        <span class="src-metric">${s.m}</span>
-      </div>
-    </div>`).join('');
-
-  const funnelsHtml = ch.funnels.map(renderFunnelLine).join('');
+  const tablesHtml = Object.entries(ch.funnels)
+    .map(([key, funnel]) => renderTable(ch, key, funnel, plat))
+    .join('');
 
   return `
 <div class="channel-block" style="--pc:${plat.color};--pb:${plat.bg}">
@@ -498,14 +459,7 @@ function renderChannel(ch, plat) {
       <span class="badge ${tc}">${tl}</span>
     </div>
   </div>
-  <div class="funnel-view">
-    <div class="sources-col">${sourcesHtml}</div>
-    <div class="trunk-conn">
-      <div class="trunk-line"></div>
-      <div class="trunk-arrow">›</div>
-    </div>
-    <div class="funnels-col">${funnelsHtml}</div>
-  </div>
+  <div class="tables-wrap">${tablesHtml}</div>
 </div>`;
 }
 
